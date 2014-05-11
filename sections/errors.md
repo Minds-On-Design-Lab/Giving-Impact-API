@@ -1,21 +1,3 @@
----
-title: Errors
-_template: docs
-summary: |
-  <p>
-  	Error formats and messages returned by the API.
-  </p>
-meta_keywords: >
-  statuses, error codes, api, fundraising
-  api
-meta_description: >
-  ​Error formats and messages returned
-  by the API.
-section: Integration (API)
-tags:
-  - error messages
-  - error codes
----
 The HTTP statuses are returned to communicate the status of an API Call.
 
 - 200 OK - valid request

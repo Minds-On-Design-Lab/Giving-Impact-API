@@ -1,29 +1,10 @@
----
-title: Getting Started
-_template: docs
-summary: |
-  <p>
-  	Getting started with our API including resource URLs, Authentication, and versioning.
-  </p>
-meta_keywords: api, fundraising api, donation api
-meta_description: >
-  ​Getting started with our API
-  including resource URLs, Authentication,
-  and versioning.
-section: Integration (API)
-tags:
-  - API
-  - resource urls
-  - authentication
-  - versioning
----
 We've designed our API to lead to a **refreshingly simple and customizable** experience. If you are brand new to Giving Impact, we'd recommend giving our [general introduction docs](/docs/introduction/getting-started) a read. For those ready to get to integrating, please, engage!
 
-### API Endpoint
+## API Endpoint
 
 	https://app.givingimpact.com/api/{version}
 
-### Resource URL Patterns
+## Resource URL Patterns
 
 - /campaigns
 - /campaigns/{id_token}
@@ -37,9 +18,7 @@ We've designed our API to lead to a **refreshingly simple and customizable** exp
 - /opportunities/{id_token}/stats/log
 - /opportunities/{id_token}/stats/range
 
-
-Authentication
---------------
+## Authentication
 
 Authentication requires a valid API Key for the account as well as providing a User-Agent.
 
@@ -57,8 +36,7 @@ Both are provided as headers as follows:
 ### Content-Type (Required for POST)
 	Content-Type: application/json
 
-Versioning
-----------
+## Versioning
 
 Current Stable Version: **v2**
 
@@ -69,3 +47,8 @@ You specify the version of the API you would like use by adding the version numb
 ### Version History
 
 * v2 - **Current** Release
+
+## API Available
+
+- [Campaigns](/sections/campaigns.md)
+- [Giving Opportunities](/sections/opportunities.md)

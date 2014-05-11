@@ -1,20 +1,3 @@
----
-title: Using Sorts, Limits, and Offsets
-_template: docs
-summary: |
-  <p>
-  	All API methods support parameters to *sort*, *limit*, and *offset* results. These are useful tools to allow you to address any number of scenarios.
-  </p>
-meta_keywords: ""
-meta_description: 'All API methods support parameters to *sort*, *limit*, and *offset* results. These are useful tools to allow you to address any number of scenarios.'
-section: Integration (API)
-tags:
-  - sort
-  - limit
-  - offset
-  - pagination
----
-
 All API methods support parameters to *sort*, *limit*, and *offset* results. These are useful tools to allow you to address any number of scenarios including but not limited to the following.
 
 * Pagination using *offset* and *limit*
