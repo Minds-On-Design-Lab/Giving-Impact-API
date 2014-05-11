@@ -50,5 +50,5 @@ You specify the version of the API you would like use by adding the version numb
 
 ## API Available
 
-- [Campaigns](/sections/campaigns.md)
-- [Giving Opportunities](/sections/opportunities.md)
+- [Campaigns](sections/campaigns.md)
+- [Giving Opportunities](sections/opportunities.md)
