@@ -20,20 +20,11 @@ The following details each attribute associated with the Campaign object.
 
 ### Attributes
 
-id_token
-: *string*, unique identifier for the Campaign
-
-status
-: *boolean*, true/false, used to define if Campaign is active or not
-
-title
-: *string*, Campaign name
-
-description
-: *text*, description maintains "\n" and "\r\n" and allows the following tags: `<p>, <a>, <strong>, <em>, <b>, <i>, <br>, <ol>, <ul>, <li>`
-
-donation_url
-: *string*, fully qualified URL to the hosted donation checkout
+- id_token *string*, unique identifier for the Campaign
+- status *boolean*, true/false, used to define if Campaign is active or not
+- title *string*, Campaign name
+- description *text*, description maintains "\n" and "\r\n" and allows the following tags: `<p>, <a>, <strong>, <em>, <b>, <i>, <br>, <ol>, <ul>, <li>`
+- donation_url *string*, fully qualified URL to the hosted donation checkout
 
 donation_target
 : *decimal*, campaign fundraising goal
