@@ -56,6 +56,7 @@ You specify the version of the API you would like use by adding the version numb
 
 ## API Available
 
+<<<<<<< HEAD
 - [Campaigns](/sections/campaigns.md)
 - [Giving Opportunities](/sections/opportunities.md)
 - [Donations](/sections/donations.md)
@@ -67,3 +68,7 @@ You specify the version of the API you would like use by adding the version numb
 - [Webhooks](/sections/webhooks.md)
 - [API Errors](/sections/errors.md)
 - [Sorts, Limits, and Offsets](/sections/using-sorts-limits-offsets.md)
+=======
+- [Campaigns](sections/campaigns.md)
+- [Giving Opportunities](sections/opportunities.md)
+>>>>>>> 93dda72ab56357eee570a52b1dbb9290930222a4
