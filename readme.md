@@ -1,4 +1,10 @@
-We've designed our API to lead to a **refreshingly simple and customizable** experience. If you are brand new to Giving Impact, we'd recommend giving our [general introduction docs](/docs/introduction/getting-started) a read. For those ready to get to integrating, please, engage!
+# Giving Impact - Stripe Online Fundraising
+
+Giving Impact™ is designed to build on Stripe to provide you with the tools to create powerful online fundraising solutions.
+
+Our suite of tools includes a fantastic dashboard for managing your fundraising initiatives and an API that allows your web development partners to create rich landing pages more efficiently.
+
+We've designed our API to lead to a **refreshingly simple and customizable** experience. If you are brand new to Giving Impact, we'd recommend giving our [general introduction docs](http://givingimpact.com/docs/introduction/getting-started) a read. For those ready to get to integrating, please, engage!
 
 ## API Endpoint
 
@@ -52,3 +58,12 @@ You specify the version of the API you would like use by adding the version numb
 
 - [Campaigns](/sections/campaigns.md)
 - [Giving Opportunities](/sections/opportunities.md)
+- [Donations](/sections/donations.md)
+- [Stats](/sections/stats.md)
+
+## Additional Docs
+
+- [Donation Checkout](/sections/donation-checkout.md)
+- [Webhooks](/sections/webhooks.md)
+- [API Errors](/sections/errors.md)
+- [Sorts, Limits, and Offsets](/sections/using-sorts-limits-offsets.md)
