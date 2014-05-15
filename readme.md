@@ -1,10 +1,10 @@
-# Giving Impact - Stripe Online Fundraising
+# Giving Impact™ - Online Fundraising for Stripe
 
-Giving Impact™ is designed to build on Stripe to provide you with the tools to create powerful online fundraising solutions.
+Giving Impact™ is designed to build on the fantastic Stripe payment processing platform to provide you with the tools to build your own online fundraising platform for your nonprofit/charity.
 
-Our suite of tools includes a fantastic dashboard for managing your fundraising initiatives and an API that allows your web development partners to create rich landing pages more efficiently.
+Our suite of tools includes a fantastic dashboard for managing fundraising initiatives and an API that allows web development resources to create rich donation experiences more efficiently.
 
-We've designed our API to lead to a **refreshingly simple and customizable** experience. If you are brand new to Giving Impact, we'd recommend giving our [general introduction docs](http://givingimpact.com/docs/introduction/getting-started) a read. For those ready to get to integrating, please, engage!
+We've designed our API for a **refreshingly simple and customizable** experience. If you are brand new to Giving Impact, we'd recommend giving our [general introduction docs](http://givingimpact.com/docs/introduction/getting-started) a read. For those ready to get to integrating, please, engage!
 
 ## API Endpoint
 
