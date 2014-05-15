@@ -29,7 +29,7 @@ We've designed our API to lead to a **refreshingly simple and customizable** exp
 Authentication requires a valid API Key for the account as well as providing a User-Agent.
 
 * API Key - A string provided by Giving Impact.  Keys are unique to a subscribing account.
-* User-Agent - A string describing the site or application using the API.
+* User-Agent - A string describing your site or application that is using the API.
 
 Both are provided as headers as follows:
 
@@ -67,3 +67,7 @@ You specify the version of the API you would like use by adding the version numb
 - [Webhooks](sections/webhooks.md)
 - [API Errors](sections/errors.md)
 - [Sorts, Limits, and Offsets](sections/using-sorts-limits-offsets.md)
+
+## API Libraries
+
+- [GivingImpact PHP](https://github.com/Minds-On-Design-Lab/givingimpact-php) - PHP Library

@@ -20,180 +20,89 @@ The following details each attribute associated with the Campaign object.
 
 ### Attributes
 
-- id_token *string*, unique identifier for the Campaign
-- status *boolean*, true/false, used to define if Campaign is active or not
-- title *string*, Campaign name
-- description *text*, description maintains "\n" and "\r\n" and allows the following tags: `<p>, <a>, <strong>, <em>, <b>, <i>, <br>, <ol>, <ul>, <li>`
-- donation_url *string*, fully qualified URL to the hosted donation checkout
+name | type | description
+------- | ----- | ------------
+id_token | string | unique identifier for the Campaign
+status | boolean | true/false, used to define if Campaign is active or not
+title | string | Campaign name
+description | text | description maintains "\n" and "\r\n" and allows the following tags: `<p>, <a>, <strong>, <em>, <b>, <i>, <br>, <ol>, <ul>, <li>`
+donation_url | string | fully qualified URL to the hosted donation checkout
+| donation_target | decimal | campaign fundraising goal
+| donation_minimum | decimal | default is 5.00, minimum donation accepted
+| donation_total | decimal | current total
+| total_donations | int | current count of donations made
+| enable_donation_levels | boolean | true/false, default is false, used to define whether donation levels should be employed or not
+has_giving_opportunities | boolean | true/false, defaults to false, used to enable the use of Giving Opportunities within the Campaign
+total_opportunities | int | count of Giving Opportunities associated with the Campaign
+share_url | string | fully qualified URL to the hosted share page
+shares_fb | int | count of instances of Facebook shares made through hosted share functionality
+shares_twitter | int | count of instances of Twitter tweets made through hosted share functionality
+image_url | string | fully qualified URL to the hosted Campaign image - original file. Userd in hosted checkout.
+thumb_url | string | fully qualified URL to the hosted Campaign image - thumbnail file. Used in hosted checkout.
+youtube_id | string | YouTube ID for video to display with Campaign. Used in hosted checkout.
+hash_tag | string | Twitter hash tag, should include the # e.g., #givingimpact. Used in hosted share.
+analytics_id | string | Google analytics profile id associated with the Campaign which when present enables ecommerce tracking on hosted donation checkout and share pages e.g., UA-1234567-12
+campaign_color | string | HEX color code used on hosted checkout/share and receipt emails for accent and header background colors
+header_font_color | string | HEX color code used for header font on hosted checkout/share and receipt emails.
+display_donation_total | boolean | true/false, used to note a preference to show/hide current donation total on hosted checkout
+display_donation_target | boolean | true/false, used to note a preference to show/hide donation target on hosted checkout
 
-donation_target
-: *decimal*, campaign fundraising goal
+#### Hash: donation_levels
 
-donation_minimum
-: *decimal*, default is 5.00, minimum donation accepted
+Includes each donation level
 
-donation_total
-: *decimal*, current total
+name | type | description
+------- | ----- | ------------
+level_id | int | unique identifier for level
+amount | decimal | value of level
+label | string | label/description of level
+position | int | used to define the order of levels for display
 
-total_donations
-: *int*, current count of donations made
+#### Hash: receipt
 
-enable_donation_levels
-: *boolean*, true/false, default is false, used to define whether donation levels should be employed or not
+Contains all donation email receipt related data
 
-donation_levels
-: hash, includes each donation level
+name | type | description
+------- | ----- | ------------
+send_receipt | boolean | true/false, defaults to false, used to turn on/off automated sending of an email receipt
+email_org_name | string | name of organization used in email
+reply_to_address | string | email address that should be used as reply to address
+bcc_address | string | email address that should be used as BCC address
+street_address | string | first line of address
+street_address_2 | string | second line of address
+city | string  | |
+state  | string  | | 
+postal_code | optional, string | |
+country | string  | |
+receipt_body  | text | body text of email receipt, maintains "\n" and "\r\n"
 
-<div class="api-hash" markdown="1">
+#### Hash: custom_fields
 
-level_id
-: *int*, unique identifier for level
+Used to define data collection fields for a supporter to complete during the donation checkout process.
 
-amount
-: *decimal*, value of level
+name | type | description
+------- | ----- | ------------
+field_id | int | unique identifier for field
+field_type | enum | defines the type of field, accepts either "dropdown" or "text"
+field_label | string | label displayed to the donor to describe the field
+options | array | used define each option of a dropdown field type, only a value for options is supported
+position | int | used for ordering custom_fields through the Dashboard or elsewhere
+status | boolean | true/false, defaults to true, used to control preference for whether field is active or inactive
+required | boolean |  true/false, defaults to false, used to control field validation 
 
-label
-: *string*, label/description of level
+#### Hash: campaign_fields
 
-position
-: *int*, used to define the order of levels for display
+Used to define data collection fields for Giving Opportunities collected at creation/management.
 
-</div>
-
-has_giving_opportunities
-: *boolean*, true/false, defaults to false, used to enable the use of Giving Opportunities within the Campaign
-
-total_opportunities
-: *int*, count of Giving Opportunities associated with the Campaign
-
-share_url
-: *string*, fully qualified URL to the hosted share page
-
-shares_fb
-: *int*, count of instances of Facebook shares made through hosted share functionality
-
-shares_twitter
-: *int*, count of instances of Twitter tweets made through hosted share functionality
-
-image_url
-: *string*, fully qualified URL to the hosted Campaign image - original file
-
-thumb_url
-: *string*, fully qualified URL to the hosted Campaign image - thumbnail file
-
-youtube_id
-: *string*, YouTube ID for video to display with Campaign
-
-hash_tag
-: *string*, Twitter hash tag, should include the # e.g., #givingimpact
-
-analytics_id
-: *string*, Google analytics profile id associated with the Campaign which when present enables ecommerce tracking on hosted donation checkout and share pages e.g., UA-1234567-12
-
-campaign_color
-: *string*, HEX color code used on hosted pages and receipt emails for accent and header background colors
-
-header_font_color
-: *string*, HEX color code used for header font on hosted pages and receipt emails.
-
-display_donation_total
-: *boolean*, true/false, used to note a preference to show/hide current donation total
-
-display_donation_target
-: *boolean*, true/false, used to note a preference to show/hide donation target
-
-receipt
-: hash, contains all donation email receipt related data
-
-<div class="api-hash" markdown="1">
- 
-send_receipt
-: *boolean*, true/false, defaults to false, used to turn on/off the feature
-
-email_org_name
-: *string*, name of organization used in email
-
-reply_to_address
-: *string*, email address that should be used as reply to address
-
-bcc_address
-: *string*, email address that should be used as BCC address
-
-street_address
-: *string*, first line of address
-
-street_address_2
-: *string*, second line of address
-
-city
-: *string*
-
-state
-: *string*
-
-postal_code
-: optional, *string*
-
-country
-: *string*
-
-receipt_body
-: *text*, body text of email receipt, maintains "\n" and "\r\n"
-
-</div>
-
-custom_fields
-: hash, used to define data collection fields for donor to complete during the donation checkout process
-
-<div class="api-hash" markdown="1">
-field_id
-: *int*, unique identifier for field
-
-field_type
-: *enum*, defines the type of field, accepts either "dropdown" or "text"
-
-field_label
-: *string*, label displayed to the donor to describe the field
-
-options
-: *array*, used define each option of a dropdown field type, only a value for options is supported
-
-position
-: *int*, used for ordering custom_fields
-
-status
-: *boolean*, true/false, defaults to true, used to control preference for whether field is active or inactive
-
-required
-: *boolean*, true/false, defaults to false, used to control field validation 
-
-</div>
-
-campaign_fields
-: hash, used to define data collection fields for Giving Opportunities collected at creation/management
-
-<div class="api-hash" markdown="1">
-field_id
-: *int*, unique identifier for field
-
-field_type
-: *enum*, defines the type of field, either "dropdown" or "text"
-
-field_label
-: *string*, label displayed to the Giving Opportunity creator to describe the field
-
-options
-: *array*, used define each option of a dropdown field type, only a value for options is supported
-
-position
-: *int*, used for ordering custom_fields
-
-status
-: *boolean*, true/false, defaults to true, used to control preference for whether field is active or inactive
-
-required
-: *boolean*, true/false, defaults to false, used to control field validation 
-</div>
+name | type | description
+------- | ----- | ------------
+field_id | int | unique identifier for field
+field_type | enum | defines the type of field, either "dropdown" or "text"
+field_label | string | label displayed to the Giving Opportunity creator to describe the field
+options | array | used define each option of a dropdown field type, only a value for options is supported
+position | int | used for ordering custom_fields through the Dashboard or elsewhere
+status | boolean | true/false, defaults to true, used to control preference for whether field is active or inactive
+required | boolean |  true/false, defaults to false, used to control field validation 
 
 <a id="list"></a>
 
@@ -250,170 +159,15 @@ In addition to the authentication and user-agent headers, the following header i
 [Complete new Campaign example](https://gist.github.com/mindsondesignlab/2f3d76a0696e8ce34da2)
 
 
-### Arguments
+### Required Arguments
 
 The following documents the various arguments accepted. Some are optional and apply to updating a campaign.
 
-status
-: **required**, *boolean*, true/false
-
-title
-: **required**, *string*
-
-description
-: **required**, *text*, description maintains "\n" and "\r\n" and allows the following tags: `<p>, <a>, <strong>, <em>, <b>, <i>, <br>, <ol>, <ul>, <li>`
-
-donation_target
-: optional, *decimal*
-
-donation_minimum
-: optional, *decimal*, default is 5.00
-
-enable_donation_levels
-: optional, *boolean*, true/false, default is false
-
-donation_levels
-: hash
-
-<div class="api-hash" markdown="1">
-level_id
-: optional, *int*, id if updating, FALSE if new 
-
-amount
-: optional, *decimal*
-
-label
-: optional, *string*
-
-position
-: optional, *int*
-
-</div>
-
-has_giving_opportunities
-: optional, *boolean*, true/false, defaults to false, used to enable the use of Giving Opportunities within the campaign
-
-image_file
-: optional, *base64 blob*
-
-image_type
-: optional, *enum*, currently accepts “jpg”, “gif”, or “png”, default is “jpg” if image exists, describes the type image_file being sent
-
-youtube_id
-: optional, *string*, can accept just the id or YouTube short URL from which we will extract the id e.g.,  http://youtu.be/C_S5cXbXe–4
-
-hash_tag
-: optional, *string*, Twitter hash tag, should include the "#" e.g., "#givingimpact"
-
-analytics_id
-: optional, *string*, Google analytics profile id which when present enables ecommerce tracking on hosted donation and share pages e.g., UA-1234567-12
-
-campaign_color
-: optional, *string*, HEX color code used on hosted pages and receipt emails for accent and header background colors
-
-header_font_color
-: optional, *string*, HEX color code used for header font on hosted pages and receipt emails.
-
-display_donation_total
-: optional, *boolean*, true/false, used to note a preference to show/hide current donation total
-
-display_donation_target
-: optional, *boolean*, true/false, used to note a preference to show/hide donation target
-
-receipt
-: hash
-
-<div class="api-hash" markdown="1">
- 
-send_receipt
-: optional, *boolean*, true/false, defaults to false
-
-email_org_name
-: optional, *string*, name of organization used in email
-
-reply_to_address
-: optional, *string*, should be a complete and valid email address
-
-bcc_address
-: optional, *string*, should be a complete and valid email address
-
-street_address
-: optional, *string*, first line of address
-
-street_address_2
-: optional, *string*, second line of address
-
-city
-: optional, *string*
-
-state
-: optional, *string*
-
-postal_code
-: optional, *string*
-
-country
-: optional, *string*
-
-receipt_body
-: optional, *text*, description maintains "\n" and "\r\n"
-
-</div>
-
-custom_fields
-: hash, used to define data collection fields in hosted donation checkout
-
-<div class="api-hash" markdown="1">
-field_id
-: optional, *int*, id if updating, FALSE if new 
-
-field_type
-: optional, *enum*, accepts either "dropdown" or "text"
-
-field_label
-: optional, *string*
-
-options
-: optional, *array*, used for each option if you are using a dropdown, only a value for options is supported
-
-position
-: optional, *int*, used for ordering custom_fields
-
-status
-: optional, *boolean*, true/false, defaults to true, used to control preference for whether field is active or inactive
-
-required
-: optional, *boolean*, true/false, defaults to false, used to control field validation 
-
-</div>
-
-campaign_fields
-: hash, used to define data collection fields for Giving Opportunities collected at creation/management
-
-<div class="api-hash" markdown="1">
-field_id
-: optional, *int*, id if updating, FALSE if new 
-
-field_type
-: optional, *enum*, accepts either "dropdown" or "text"
-
-field_label
-: optional, *string*
-
-options
-: optional, *array*, used for each option if you are using a dropdown, only a value for options is supported
-
-position
-: optional, *int*, used for ordering custom_fields
-
-status
-: optional, *boolean*, true/false, defaults to true, used to control preference for whether field is active or inactive
-
-required
-: optional, *boolean*, true/false, defaults to false, used to control field validation  
-</div>
-
-<a id="list"></a>
+name | requireed | type/details
+------- | ----- | ------------
+status | required | boolean, true/false
+title | required | string
+description | required | text, description maintains "\n" and "\r\n" and allows the following tags: `<p>, <a>, <strong>, <em>, <b>, <i>, <br>, <ol>, <ul>, <li>`
 
 <a id="update"></a>
 
