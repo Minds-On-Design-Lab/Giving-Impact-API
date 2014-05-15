@@ -31,7 +31,7 @@ Authentication requires a valid API Key for the account as well as providing a U
 * API Key - A string provided by Giving Impact.  Keys are unique to a subscribing account.
 * User-Agent - A string describing your site or application that is using the API.
 
-Both are provided as headers as follows:
+Both can be accessed from the Account Settings are of the Dashboard and are provided as headers as follows:
 
 ### API Key  
      X-GI-Authorization: {api-key-string}
