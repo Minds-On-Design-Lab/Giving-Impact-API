@@ -12,8 +12,6 @@ Giving Opportunities are used to setup teams within a Campaign and as such are p
 - [Create a Campaign](#create-a-campaign)
 - [Update a Campaign](#update-a-campaign)
 
-<a id="object"></a>
-
 ## The Campaign Object
 
 The following details each attribute associated with the Campaign object.
@@ -104,10 +102,7 @@ position | int | used for ordering custom_fields through the Dashboard or elsewh
 status | boolean | true/false, defaults to true, used to control preference for whether field is active or inactive
 required | boolean |  true/false, defaults to false, used to control field validation 
 
-<a id="list"></a>
-
-List Campaigns
----------------
+## List Campaigns
 
 The following methods and arguments are used to return a list of Campaigns.
 
@@ -129,20 +124,14 @@ Get a list of all of an account's campaigns including both active and inactive w
  
 	/campaigns?status=both
 
-<a id="retrieve"></a>
-
-Retrieve a Campaign
---------------------------------------------------
+## Retrieve a Campaign
 
 Get a specific campaign with the following GET request:
 
 	/campaigns/{id_token}
 
 
-<a id="create"></a>
-
-Create a New Campaign
----------------------------------------------------
+## Create a Campaign
 
 You can create a new Campaign by sending a POST request to the following URI.
 
