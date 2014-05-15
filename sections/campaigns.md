@@ -10,7 +10,7 @@ Giving Opportunities are used to setup teams within a Campaign and as such are p
 - [List Campaigns](#list)
 - [Retrieve a Campaign](#retrieve)
 - [Create a Campaign](#create)
-- [Update a Campaign](#update)
+- [Update a Campaign](#update-a-campaign)
 
 <a id="object"></a>
 
@@ -169,10 +169,7 @@ status | required | boolean, true/false
 title | required | string
 description | required | text, description maintains "\n" and "\r\n" and allows the following tags: `<p>, <a>, <strong>, <em>, <b>, <i>, <br>, <ol>, <ul>, <li>`
 
-(#update)
-
-Update a Campaign
----------------------------------------------------
+## Update a Campaign
 
 You can update an existing Campaign by sending a POST request to the following URI where {id_token} is the unique id for the Campaign you would like to update.
 
