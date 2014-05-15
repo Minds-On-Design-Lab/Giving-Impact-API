@@ -6,10 +6,10 @@ Giving Opportunities are used to setup teams within a Campaign and as such are p
 
 ## Working With Campaigns
 
-- [The Campaign Object](#object)
-- [List Campaigns](#list)
-- [Retrieve a Campaign](#retrieve)
-- [Create a Campaign](#create)
+- [The Campaign Object](#the-campaign-object)
+- [List Campaigns](#list-campaigns)
+- [Retrieve a Campaign](#retrieve-a-campaign)
+- [Create a Campaign](#create-a-campaign)
 - [Update a Campaign](#update-a-campaign)
 
 <a id="object"></a>
