@@ -169,7 +169,7 @@ status | required | boolean, true/false
 title | required | string
 description | required | text, description maintains "\n" and "\r\n" and allows the following tags: `<p>, <a>, <strong>, <em>, <b>, <i>, <br>, <ol>, <ul>, <li>`
 
-<a id="update"></a>
+(#update)
 
 Update a Campaign
 ---------------------------------------------------
