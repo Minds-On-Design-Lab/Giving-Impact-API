@@ -1,35 +1,27 @@
-- [The Stats Object](#object)
-- [Stats Log](#log)
-- [Stats Range](#list)
+# Stats 
 
-<a id="object"></a>
+Access aggregate data to generate activity logs and reports.
 
-The Stats Object
------------------------------
+- [The Stats Object](#the-stats-object)
+- [Stats Log](#stats-log)
+- [Stats Range](#stats-range)
+
+## The Stats Object
 
 The following details each attribute uniquely associated with the Stats object.
 
 ### Attributes
 
-total_donations
-: *int*, total number of donations
+name | type | description
+------- | ----- | ------------
+total_donations | int | total number of donations
+shares_fb | int | total number of facebook shares
+shares_twitter | int | total number of twitter shares
+donation_total | decimal | sum total of donation amount
+date | date | YYYY-MM-DD
 
-shares_fb
-: *int*, total number of facebook shares
 
-shares_twitter
-: *int*, total number of twitter shares
-
-donation_total
-: *decimal*, sum total of donation amount
-
-date
-: *date*, YYYY-MM-DD
-
-<a id="log"></a>
-
-The Stats Log
------------------------------
+## The Stats Log
 
 ### Get a list of log entries for a Campaign
 
@@ -39,23 +31,18 @@ The Stats Log
 
 <script src="https://gist.github.com/mindsondesignlab/aaa9a161ce7454cd858d.js"></script>
 
-
 ### Get a list of log entries for a Giving Opportunity
 
 	/opportunities/{id_token}/stats/log
 
-<a id="Range"></a>
-
-The Stats Range
------------------------------
+## The Stats Range
 
 The Stats Range method accepts two unique parameters allow you to request log entries using dates.
 
-before
-: *timestamp*, YYYY-MM-DD
-
-after
-: *timestamp*, YYYY-MM-DD
+name | type | description
+------- | ----- | ------------
+before | timestamp | YYYY-MM-DD
+after | timestamp | YYYY-MM-DD
 
 ### Get a list of log entries for a Campaign between two dates
 

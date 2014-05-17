@@ -1,16 +1,16 @@
+# Webhooks
+
 - [Overview](#overview)
 - [Authentication](#authentication)
-- [Hook Validation](#validation)
-- [Hook Events](#events)
-- [Event Returned Data](#returned)
-- [Get a list of Webhook Subscriptions for Your Account](#list)
-- [Create a New Hook Subscription](#create)
-- [Get a Specific Hook](#get_hook)
-- [Update an Exisitng Hook](#update_hook)
-- [Delete (unsubscribe) a Hook](#delete_hook)
-- [Hook Failures](#failures)
-
-<a id="overview"></a>
+- [Hook Validation](#hook-validation)
+- [Hook Events](#hook-events)
+- [Event Returned Data](#event-returned-data)
+- [Get a list of Webhook Subscriptions for Your Account](#get-a-list-of-webhook-subscriptions-for-your-account)
+- [Create a New Hook Subscription](#create-a-new-hook-subscription)
+- [Get a Specific Hook](#get-a-specific-hook)
+- [Update an Exisitng Hook](#update-an-existing-hook)
+- [Delete a Hook](#delete-a-hook)
+- [Hook Failures](#hook-failures)
 
 ## Overview
 
@@ -22,15 +22,11 @@ When you subscribe to a webhook you provide a URL to an endpoint of your choosin
 
 The following outlines the process of working with Giving Impact's Webhooks and details the specific hooks you can subscribe to. 
 
-<a id="authentication"></a>
-
 ## Authentication
 
 All requests to the Webhooks API require authentication using a valid API Key for the account.
 
      X-GI-Authorization: {api-key-string}
-
-<a id="validation"></a>
 
 ## Hook Validation
 
@@ -109,7 +105,6 @@ In practice it looks like this:
              }
          }
 
-<a id="events"></a>
 
 ## Hook Events
 
@@ -130,8 +125,6 @@ The following events are supported.
 * opportunity.edit
 
 Each event will return data for the appropriate object. For details of returned data please review the docs for the appropriate object.
-
-<a id="returned"></a>
 
 ## Event Returned Data
 
@@ -279,7 +272,7 @@ Update or validate a webhook. Passing a single `token` value will validate a hoo
 
 <a id="delete_hook"></a>
 
-## Delete (unsubscribe) a Hook
+## Delete a Hook
  
 To delete a hook send a DELETE request to the URI with the following format:
 

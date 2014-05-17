@@ -1,3 +1,5 @@
+# Using Sorts, Limits, and Offsets
+
 All API methods support parameters to *sort*, *limit*, and *offset* results. These are useful tools to allow you to address any number of scenarios including but not limited to the following.
 
 * Pagination using *offset* and *limit*
