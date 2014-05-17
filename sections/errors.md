@@ -1,3 +1,5 @@
+# Error Handling
+
 The HTTP statuses are returned to communicate the status of an API Call.
 
 - 200 OK - valid request
@@ -15,21 +17,16 @@ The HTTP statuses are returned to communicate the status of an API Call.
 		type: "MACHINE READABLE MESSAGE"
 	}
 
-#### message
+#### Message
 A human readable error description, for example "Invalid API Key." 
 
 
 #### Error Type
 Error type is a machine readable message and includes the following:
 
-invalid_request
-: The request was either malformed or missing the api key, user agent type or was the wrong type (GET vs POST)
-
-invalid_token
-: The requested opportunity/campaign/donation endpoint requires a token and it either wasn't found or was incorrect
-
-missing_parameters
-: Update/Create request was missing one or more required parameters
-
-invalid_parameters
-: Update/Create request contained all required parameters, but validation failed
+name | details
+------- | -----
+invalid_request | The request was either malformed or missing the api key, user agent type or was the wrong type (GET vs POST)
+invalid_token | The requested opportunity/campaign/donation endpoint requires a token and it either wasn't found or was incorrect
+missing_parameters | Update/Create request was missing one or more required parameters
+invalid_parameters | Update/Create request contained all required parameters, but validation failed
