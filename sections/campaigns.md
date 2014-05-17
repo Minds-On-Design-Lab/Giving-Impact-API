@@ -150,9 +150,9 @@ In addition to the authentication and user-agent headers, the following header i
 
 ### Required Arguments
 
-The following documents the various arguments accepted. Some are optional and apply to updating a campaign.
+The following documents the required arguments.
 
-name | requireed | type/details
+name | required | type/details
 ------- | ----- | ------------
 status | required | boolean, true/false
 title | required | string

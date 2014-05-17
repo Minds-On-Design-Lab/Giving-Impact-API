@@ -13,7 +13,7 @@ Implementing a solution with Hosted Checkout is as simple as pointing donors to 
 
 The following is an example of the first page of the Hosted Checkout.
 
-![Hosted Checkout Screen](/assets/img/docs/hosted_checkout.png)
+![Hosted Checkout Screen](_assets/hosted_checkout.png)
 
 ## Custom Checkout
 
