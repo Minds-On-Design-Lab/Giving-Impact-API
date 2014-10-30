@@ -106,134 +106,6 @@ required | boolean |  true/false, defaults to false, used to control field valid
 
 The following methods and arguments are used to return a list of Campaigns.
 
-```json
-{
-  "error": false,
-  "campaigns": [
-    {
-      "id_token": "123abcdefg",
-      "status": true,
-      "title": "Walk Campaign",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "donation_url": "https://app.givingimpact.com/initiate_donation/123abcdefg",
-      "donation_target": "500.00",x
-      "donation_minimum": "10.00",
-      "donation_total": "200.00",
-      "total_donations": "4",
-      "enable_donation_levels": false,
-      "donation_levels": [],
-      "has_giving_opportunities": true,
-      "total_opportunities": "3",
-      "share_url": "https://app.givingimpact.com/initiate_share/123abcdefg",
-      "shares_fb": "5",
-      "shares_twitter": "10",
-      "image_url": "http://ourcdn.com/campaign_images/112/_original.jpg",
-      "thumb_url": "http://ourcdn.com/campaign_images/112/_thumb.jpg",
-      "youtube_id": "abCdEf1234",
-      "hash_tag": "#walkcampaign",
-      "analytics_id": "UA-1234567-11",
-      "campaign_color": "#000000",
-      "header_font_color": "#ffffff",
-      "display_donation_target": true,
-      "display_donation_total": true,
-      "receipt": {
-        "send_receipt": false,
-        "email_org_name": "",
-        "reply_to_address": "",
-        "bcc_address": "",
-        "street_address": "",
-        "street_address_2": "",
-        "city": "",
-        "state": "",
-        "postal_code": "",
-        "country": "",
-        "receipt_body": ""
-      },
-      "custom_fields": [
-        {
-          "field_id": "47",
-          "field_type": "text",
-          "field_label": "Donation Message",
-          "options": [],
-          "position": "1",
-          "status": true,
-          "required": false
-        }
-      ]
-    },
-    {
-      "id_token": "456abcdefg",
-      "status": true,
-      "title": "Holiday Fundraiser",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "donation_url": "https://app.givingimpact.com/initiate_donation/456abcdefg",
-      "donation_target": "10000.00",
-      "donation_minimum": "25.00",
-      "donation_total": "3500.00",
-      "total_donations": "40",
-      "enable_donation_levels": true,
-      "donation_levels": [
-        {
-          "amount": "25.00",
-          "label": "Silver",
-          "position": "1"
-        },
-        {
-          "amount": "100.00",
-          "label": "Gold",
-          "position": "2"
-        },
-        {
-          "amount": "500.00",
-          "label": "Platinum",
-          "position": "3"
-        }
-      ],
-      "has_giving_opportunities": false,
-      "total_opportunities": "0",
-      "share_url": "https://app.givingimpact.com/initiate_share/456abcdefg",
-      "shares_fb": "5",
-      "shares_twitter": "10",
-      "image_url": "http://ourcdn.com/campaign_images/112/_original.jpg",
-      "thumb_url": "http://ourcdn.com/campaign_images/112/_thumb.jpg",
-      "youtube_id": "abCdEf1234",
-      "hash_tag": "#holidaycampaign",
-      "analytics_id": "UA-1234567-12",
-      "campaign_color": "#000000",
-      "header_font_color": "#ffffff",
-      "display_donation_target": true,
-      "display_donation_total": true,
-      "receipt": {
-        "send_receipt": false,
-        "email_org_name": "",
-        "reply_to_address": "",
-        "bcc_address": "",
-        "street_address": "",
-        "street_address_2": "",
-        "city": "",
-        "state": "",
-        "postal_code": "",
-        "country": "",
-        "receipt_body": ""
-      },
-      "custom_fields": [
-        {
-          "field_id": "48",
-          "field_type": "dropdown",
-          "field_label": "Is this your first time donating to us?",
-          "options": [
-            "Yes",
-            "No"
-          ],
-          "position": "1",
-          "status": true,
-          "required": false
-        }
-      ]
-    }
-  ]
-}
-```
 
 Get a list of all of an account's active campaigns with the following GET request:
 
@@ -250,6 +122,137 @@ Get a list of all of an account's inactive campaigns with the following GET requ
 Get a list of all of an account's campaigns including both active and inactive with the following GET request:
 
 	/campaigns?status=both
+
+### Example Response
+
+```json
+{
+	"error": false,
+	"campaigns": [
+		{
+			"id_token": "123abcdefg",
+			"status": true,
+			"title": "Walk Campaign",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			"donation_url": "https://app.givingimpact.com/initiate_donation/123abcdefg",
+			"donation_target": "500.00",x
+			"donation_minimum": "10.00",
+			"donation_total": "200.00",
+			"total_donations": "4",
+			"enable_donation_levels": false,
+			"donation_levels": [],
+			"has_giving_opportunities": true,
+			"total_opportunities": "3",
+			"share_url": "https://app.givingimpact.com/initiate_share/123abcdefg",
+			"shares_fb": "5",
+			"shares_twitter": "10",
+			"image_url": "http://ourcdn.com/campaign_images/112/_original.jpg",
+			"thumb_url": "http://ourcdn.com/campaign_images/112/_thumb.jpg",
+			"youtube_id": "abCdEf1234",
+			"hash_tag": "#walkcampaign",
+			"analytics_id": "UA-1234567-11",
+			"campaign_color": "#000000",
+			"header_font_color": "#ffffff",
+			"display_donation_target": true,
+			"display_donation_total": true,
+			"receipt": {
+				"send_receipt": false,
+				"email_org_name": "",
+				"reply_to_address": "",
+				"bcc_address": "",
+				"street_address": "",
+				"street_address_2": "",
+				"city": "",
+				"state": "",
+				"postal_code": "",
+				"country": "",
+				"receipt_body": ""
+			},
+			"custom_fields": [
+				{
+					"field_id": "47",
+					"field_type": "text",
+					"field_label": "Donation Message",
+					"options": [],
+					"position": "1",
+					"status": true,
+					"required": false
+				}
+			]
+		},
+		{
+			"id_token": "456abcdefg",
+			"status": true,
+			"title": "Holiday Fundraiser",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			"donation_url": "https://app.givingimpact.com/initiate_donation/456abcdefg",
+			"donation_target": "10000.00",
+			"donation_minimum": "25.00",
+			"donation_total": "3500.00",
+			"total_donations": "40",
+			"enable_donation_levels": true,
+			"donation_levels": [
+				{
+					"amount": "25.00",
+					"label": "Silver",
+					"position": "1"
+				},
+				{
+					"amount": "100.00",
+					"label": "Gold",
+					"position": "2"
+				},
+				{
+					"amount": "500.00",
+					"label": "Platinum",
+					"position": "3"
+				}
+			],
+			"has_giving_opportunities": false,
+			"total_opportunities": "0",
+			"share_url": "https://app.givingimpact.com/initiate_share/456abcdefg",
+			"shares_fb": "5",
+			"shares_twitter": "10",
+			"image_url": "http://ourcdn.com/campaign_images/112/_original.jpg",
+			"thumb_url": "http://ourcdn.com/campaign_images/112/_thumb.jpg",
+			"youtube_id": "abCdEf1234",
+			"hash_tag": "#holidaycampaign",
+			"analytics_id": "UA-1234567-12",
+			"campaign_color": "#000000",
+			"header_font_color": "#ffffff",
+			"display_donation_target": true,
+			"display_donation_total": true,
+			"receipt": {
+				"send_receipt": false,
+				"email_org_name": "",
+				"reply_to_address": "",
+				"bcc_address": "",
+				"street_address": "",
+				"street_address_2": "",
+				"city": "",
+				"state": "",
+				"postal_code": "",
+				"country": "",
+				"receipt_body": ""
+			},
+			"custom_fields": [
+				{
+					"field_id": "48",
+					"field_type": "dropdown",
+					"field_label": "Is this your first time donating to us?",
+					"options": [
+						"Yes",
+						"No"
+					],
+					"position": "1",
+					"status": true,
+					"required": false
+				}
+			]
+		}
+	]
+}
+```
 
 ## Retrieve a Campaign
 
