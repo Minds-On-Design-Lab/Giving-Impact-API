@@ -23,6 +23,8 @@ We've designed our API for a **refreshingly simple and customizable** experience
 - /campaigns/{id_token}/stats/range
 - /opportunities/{id_token}/stats/log
 - /opportunities/{id_token}/stats/range
+- /supporters/
+- /supporters/{id_token}
 
 ## Authentication
 
@@ -60,6 +62,7 @@ You specify the version of the API you would like use by adding the version numb
 - [Giving Opportunities](sections/opportunities.md)
 - [Donations](sections/donations.md)
 - [Stats](sections/stats.md)
+- [Supporters](sections/supporters.md)
 
 ## Additional Docs
 
