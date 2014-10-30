@@ -69,7 +69,7 @@ bcc_address | string | email address that should be used as BCC address
 street_address | string | first line of address
 street_address_2 | string | second line of address
 city | string  | |
-state  | string  | | 
+state  | string  | |
 postal_code | optional, string | |
 country | string  | |
 receipt_body  | text | body text of email receipt, maintains "\n" and "\r\n"
@@ -86,7 +86,7 @@ field_label | string | label displayed to the donor to describe the field
 options | array | used define each option of a dropdown field type, only a value for options is supported
 position | int | used for ordering custom_fields through the Dashboard or elsewhere
 status | boolean | true/false, defaults to true, used to control preference for whether field is active or inactive
-required | boolean |  true/false, defaults to false, used to control field validation 
+required | boolean |  true/false, defaults to false, used to control field validation
 
 #### Hash: campaign_fields
 
@@ -100,13 +100,140 @@ field_label | string | label displayed to the Giving Opportunity creator to desc
 options | array | used define each option of a dropdown field type, only a value for options is supported
 position | int | used for ordering custom_fields through the Dashboard or elsewhere
 status | boolean | true/false, defaults to true, used to control preference for whether field is active or inactive
-required | boolean |  true/false, defaults to false, used to control field validation 
+required | boolean |  true/false, defaults to false, used to control field validation
 
 ## List Campaigns
 
 The following methods and arguments are used to return a list of Campaigns.
 
-[Example Response](https://gist.github.com/mindsondesignlab/62d0e778d9e9f5859bc9)
+```json
+{
+  "error": false,
+  "campaigns": [
+    {
+      "id_token": "123abcdefg",
+      "status": true,
+      "title": "Walk Campaign",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "donation_url": "https://app.givingimpact.com/initiate_donation/123abcdefg",
+      "donation_target": "500.00",x
+      "donation_minimum": "10.00",
+      "donation_total": "200.00",
+      "total_donations": "4",
+      "enable_donation_levels": false,
+      "donation_levels": [],
+      "has_giving_opportunities": true,
+      "total_opportunities": "3",
+      "share_url": "https://app.givingimpact.com/initiate_share/123abcdefg",
+      "shares_fb": "5",
+      "shares_twitter": "10",
+      "image_url": "http://ourcdn.com/campaign_images/112/_original.jpg",
+      "thumb_url": "http://ourcdn.com/campaign_images/112/_thumb.jpg",
+      "youtube_id": "abCdEf1234",
+      "hash_tag": "#walkcampaign",
+      "analytics_id": "UA-1234567-11",
+      "campaign_color": "#000000",
+      "header_font_color": "#ffffff",
+      "display_donation_target": true,
+      "display_donation_total": true,
+      "receipt": {
+        "send_receipt": false,
+        "email_org_name": "",
+        "reply_to_address": "",
+        "bcc_address": "",
+        "street_address": "",
+        "street_address_2": "",
+        "city": "",
+        "state": "",
+        "postal_code": "",
+        "country": "",
+        "receipt_body": ""
+      },
+      "custom_fields": [
+        {
+          "field_id": "47",
+          "field_type": "text",
+          "field_label": "Donation Message",
+          "options": [],
+          "position": "1",
+          "status": true,
+          "required": false
+        }
+      ]
+    },
+    {
+      "id_token": "456abcdefg",
+      "status": true,
+      "title": "Holiday Fundraiser",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "donation_url": "https://app.givingimpact.com/initiate_donation/456abcdefg",
+      "donation_target": "10000.00",
+      "donation_minimum": "25.00",
+      "donation_total": "3500.00",
+      "total_donations": "40",
+      "enable_donation_levels": true,
+      "donation_levels": [
+        {
+          "amount": "25.00",
+          "label": "Silver",
+          "position": "1"
+        },
+        {
+          "amount": "100.00",
+          "label": "Gold",
+          "position": "2"
+        },
+        {
+          "amount": "500.00",
+          "label": "Platinum",
+          "position": "3"
+        }
+      ],
+      "has_giving_opportunities": false,
+      "total_opportunities": "0",
+      "share_url": "https://app.givingimpact.com/initiate_share/456abcdefg",
+      "shares_fb": "5",
+      "shares_twitter": "10",
+      "image_url": "http://ourcdn.com/campaign_images/112/_original.jpg",
+      "thumb_url": "http://ourcdn.com/campaign_images/112/_thumb.jpg",
+      "youtube_id": "abCdEf1234",
+      "hash_tag": "#holidaycampaign",
+      "analytics_id": "UA-1234567-12",
+      "campaign_color": "#000000",
+      "header_font_color": "#ffffff",
+      "display_donation_target": true,
+      "display_donation_total": true,
+      "receipt": {
+        "send_receipt": false,
+        "email_org_name": "",
+        "reply_to_address": "",
+        "bcc_address": "",
+        "street_address": "",
+        "street_address_2": "",
+        "city": "",
+        "state": "",
+        "postal_code": "",
+        "country": "",
+        "receipt_body": ""
+      },
+      "custom_fields": [
+        {
+          "field_id": "48",
+          "field_type": "dropdown",
+          "field_label": "Is this your first time donating to us?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "position": "1",
+          "status": true,
+          "required": false
+        }
+      ]
+    }
+  ]
+}
+```
 
 Get a list of all of an account's active campaigns with the following GET request:
 
@@ -121,7 +248,7 @@ Get a list of all of an account's inactive campaigns with the following GET requ
 	/campaigns?status=inactive
 
 Get a list of all of an account's campaigns including both active and inactive with the following GET request:
- 
+
 	/campaigns?status=both
 
 ## Retrieve a Campaign
@@ -143,7 +270,17 @@ In addition to the authentication and user-agent headers, the following header i
 
 ### Example Post Body
 
-<script src="https://gist.github.com/mindsondesignlab/778c59cb75ee6f960c94.js"></script>
+```json
+{
+  "status": true,
+  "title": "The Ultimate Bowl-a-thon!!!",
+  "description": "Create your team. Gather your uniforms. Knock some pins. Support us to do more good.",
+  "donation_target": "5000.00",
+  "donation_minimum": "10.00",
+  "enable_donation_levels": false,
+  "has_giving_opportunities": true
+}
+```
 
 [Complete new Campaign example](https://gist.github.com/mindsondesignlab/2f3d76a0696e8ce34da2)
 
