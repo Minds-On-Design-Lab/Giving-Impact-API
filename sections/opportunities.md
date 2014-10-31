@@ -52,10 +52,46 @@ status | boolean | true/false, defaults to true, used to control preference for 
 Get a list of all of a Campaign's Giving Opportunties with the following GET request:
 
 	/campaigns/{id_token}/opportunities
-	
+
 ### Example Response
 
-<script src="https://gist.github.com/mindsondesignlab/ab4449cf29b3d98f75bc.js"></script>
+```json
+{
+  "error": false,
+  "opportunity": {
+    "id_token": "0a13b0fbdb",
+    "status": true,
+    "title": "Team MOD-Lab",
+    "description": "We are team dedicated to this Sample Org and their cause. Here is why we think you should support us and them. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "donation_url": "http://app.givingimpact.com/initiate_donation/0a13b0fbdb",
+    "donation_target": "300.00",
+    "donation_total": "195.00",
+    "total_donations": "2",
+    "share_url": "http://app.givingimpact.com/initiate_share/0a13b0fbdb",
+    "shares_fb": "0",
+    "shares_twitter": "1",
+    "image_url": "",
+    "thumb_url": "",
+    "youtube_id": "",
+    "campaign_responses": [
+      {
+        "campaign_field_id": "1",
+        "field_type": "text",
+        "field_label": "What is your Name?",
+        "response": "Thor",
+        "status": true
+      },
+      {
+        "campaign_field_id": "2",
+        "field_type": "How did you hear about this campaign?",
+        "field_label": "A dropdown",
+        "response": "Email",
+        "status": true
+      }
+    ]
+  }
+}
+```
 
 ## Retrieve a specific Giving Opportunity
 
@@ -81,7 +117,15 @@ In addition to the authentication and user-agent headers, the following header i
 
 ### Example Post Body
 
-<script src="https://gist.github.com/mindsondesignlab/75b0e9992816ad1a8355.js"></script>
+```json
+{
+  "campaign_token":"{id_token}",
+  "title":"String name goes here",
+  "description":"Full description goes here. This can be a short paragraph.",
+  "donation_target":"500.00",
+  "status":true
+}
+```
 
 ### Arguments
 
@@ -104,7 +148,7 @@ Used to create or update data collection fields for Giving Opportunity setup as 
 
 name | required | type/details
 ------- | ----- | ------------
-campaign_field_id | | int, unique id of field 
+campaign_field_id | | int, unique id of field
 response | | string, data storing for field response
 
 ## Update a Giving Opportunity

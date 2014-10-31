@@ -135,7 +135,7 @@ Get a list of all of an account's campaigns including both active and inactive w
 			"title": "Walk Campaign",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 			"donation_url": "https://app.givingimpact.com/initiate_donation/123abcdefg",
-			"donation_target": "500.00",x
+			"donation_target": "500.00",
 			"donation_minimum": "10.00",
 			"donation_total": "200.00",
 			"total_donations": "4",

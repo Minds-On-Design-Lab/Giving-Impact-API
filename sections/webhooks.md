@@ -14,13 +14,13 @@
 
 ## Overview
 
-Webhooks provides a means for you to receive automated and systemic updates when certain events in Giving Impact(TM) happen. Webhooks compliment the API in that an API is where you go to make requests to get, create, and change data. Webhooks reaches out to you with critical data when certain events you care about happen. For example you can subscribe to a hook that will send you complete donation data every time a new donation is created. 
+Webhooks provides a means for you to receive automated and systemic updates when certain events in Giving Impact(TM) happen. Webhooks compliment the API in that an API is where you go to make requests to get, create, and change data. Webhooks reaches out to you with critical data when certain events you care about happen. For example you can subscribe to a hook that will send you complete donation data every time a new donation is created.
 
 This is a powerful integration tool allowing you further control over your data.
 
 When you subscribe to a webhook you provide a URL to an endpoint of your choosing. This URL will be crafted by you to receive incoming data from the subscribed hook and will be prepared to process it.
 
-The following outlines the process of working with Giving Impact's Webhooks and details the specific hooks you can subscribe to. 
+The following outlines the process of working with Giving Impact's Webhooks and details the specific hooks you can subscribe to.
 
 ## Authentication
 
@@ -33,7 +33,7 @@ All requests to the Webhooks API require authentication using a valid API Key fo
 Hooks must be validated before they're activated. Validation is a process of creating a new hook and then negotiation the establishing and confirmation of a unique token.
 
 1. Account creates new hook
-2. Webhook API responds to confirm receipt of request 
+2. Webhook API responds to confirm receipt of request
 3. Webhook API then posts an exchange token to provided Account endpoint
 4. Account endpoint receives exchange token and POSTs to API with validated token
 5. Hook API activates event
@@ -140,7 +140,7 @@ Data from events is packaged as follows:
         }
     }
 
-Within the `payload` element will be the specific object the event is related to such as a `donation`. That object will include all related data. For details about the specific object and data returned refer to that object's API documentation page. 
+Within the `payload` element will be the specific object the event is related to such as a `donation`. That object will include all related data. For details about the specific object and data returned refer to that object's API documentation page.
 
 <a id="list"></a>
 
@@ -174,7 +174,7 @@ You can retrieve a list of subscriptions by sending a GET request to the URI wit
 ## Create a New Hook Subscription
 
 To create a new hook send a POST request to the URI with the following format:
- 
+
     hook/subscriptions
 
 ### Required Fields
@@ -273,7 +273,7 @@ Update or validate a webhook. Passing a single `token` value will validate a hoo
 <a id="delete_hook"></a>
 
 ## Delete a Hook
- 
+
 To delete a hook send a DELETE request to the URI with the following format:
 
     hook/subscriptions/{id}

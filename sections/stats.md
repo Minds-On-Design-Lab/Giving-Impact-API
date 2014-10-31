@@ -1,4 +1,4 @@
-# Stats 
+# Stats
 
 Access aggregate data to generate activity logs and reports.
 
@@ -29,8 +29,27 @@ date | date | YYYY-MM-DD
 
 #### Sample Response
 
-<script src="https://gist.github.com/mindsondesignlab/aaa9a161ce7454cd858d.js"></script>
-
+```json
+{
+  "error": false,
+  "stats": [
+    {
+      "total_donations": "1",
+      "shares_fb": 0,
+      "shares_twitter": 0,
+      "donation_total": "34.00",
+      "date": "2013-05-16"
+    },
+    {
+      "total_donations": "2",
+      "shares_fb": 0,
+      "shares_twitter": 0,
+      "donation_total": "29.00",
+      "date": "2013-05-13"
+    }
+  ]
+}
+```
 ### Get a list of log entries for a Giving Opportunity
 
 	/opportunities/{id_token}/stats/log

@@ -10,15 +10,15 @@ The HTTP statuses are returned to communicate the status of an API Call.
 - 500 Internal Server Error - oh no, this is a server error.
 
 ### Error Format
-
-	{ 
-		Error: true, 
-		message: "ERROR MESSAGE HERE" 
-		type: "MACHINE READABLE MESSAGE"
-	}
-
+```json
+{
+	Error: true,
+	message: "ERROR MESSAGE HERE"
+	type: "MACHINE READABLE MESSAGE"
+}
+```
 #### Message
-A human readable error description, for example "Invalid API Key." 
+A human readable error description, for example "Invalid API Key."
 
 
 #### Error Type

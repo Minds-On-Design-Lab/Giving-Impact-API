@@ -57,24 +57,77 @@ You can retrieve a list by sending a GET request to the URI with the following f
 	/campaigns/{id_token}/donations
 
 #### Response
-	
-<script src="https://gist.github.com/mindsondesignlab/5548310.js"></script>
-	
+
+```json
+{
+    "error": false,
+    "donation": {
+        "id_token": "a5f105f445",
+        "donation_date": "2013-03-01 10:37:52",
+        "campaign": "c5bb65d34b",
+        "first_name": "Test",
+        "last_name": "Donor",
+        "billing_address1": "100 Brooklyn St",
+        "billing_city": "Brooklyn",
+        "billing_state": "New York",
+        "billing_postal_code": "11201",
+        "billing_country": "United States",
+        "donation_total": "50.00",
+        "donation_level": "",
+        "donation_level_id": "",
+        "contact": true,
+        "email_address": "support@givingimpact.com",
+        "offline": false,
+        "twitter_share": false,
+        "fb_share": false,
+        "custom_responses": [
+            {
+                "field_id": "123",
+                "field_type": "text",
+                "field_label": "Donation Message",
+                "response": "I think this is a stellar cause, wish I could join the walk with a team.",
+                "status": true
+            },
+            {
+                "field_id": "124",
+                "field_type": "dropdown",
+                "field_label": "How did you hear about this cause?",
+                "response": "Facebook",
+                "status": true
+            }
+        ],
+        "supporter": {
+            id_token: "2fea64d8ac",
+            first_name: "Test",
+            last_name: "Donor",
+            email_address: "support@givingimpact.com",
+            street_address: "100 Brooklyn St",
+            city: "Brooklyn",
+            state: "NY",
+            postal_code: "11201",
+            country: "United States",
+            donations_total: "100",
+            total_donations: "2"
+        }
+    }
+}
+```
+
 ### Get a list of all of a Giving Opportunty's Donations
 
-Please note, if a donor opts out for email follow-ups, their email address will not be returned. 
+Please note, if a donor opts out for email follow-ups, their email address will not be returned.
 
 You can retrieve a list by sending a GET request to the URI with the following format:
-			
+
 	/opportunities/{id_token}/donations
 
 
 ## Retrieve a Donation
 
 You can retrieve a single donation by sending a GET request to the URI with the following format:
-			
+
 	/donations/{id_token}
-	
+
 
 ## The Magic "Related" Parameter
 
@@ -97,11 +150,27 @@ In addition to the authentication and user-agent headers, the following header i
 
 ### Example Post Body
 
-<script src="https://gist.github.com/mindsondesignlab/6938fb105e539c6e14ca.js"></script>
+```json
+{
+  "campaign": "1234abcde",
+  "donation_date": "2013-05-16 20:00:00",
+  "first_name": "Greedo",
+  "last_name": "TheElder",
+  "billing_address1": "100 Best Spot",
+  "billing_city": "Mos Eisley Cantina",
+  "billing_state": "Tatooine",
+  "billing_postal_code": "10001",
+  "billing_country": "United States",
+  "donation_total": "50.00",
+  "donation_level": "",
+  "contact": true,
+  "email_address": "greedo@givingimpact.com"
+}
+```
 
 ### Arguments
 
-The following documents the required arguments. 
+The following documents the required arguments.
 
 name | required | type/details
 ------- | ----- | ------------

@@ -32,7 +32,7 @@ In short, this setup ensures that credit card data does not touch your server (l
 
 4. Post the donation, billing, and Stripe's payment  token to the `/donations` API method.
 3. If the credit card or any Giving Impact data fails validation for any reason, the API will return an appropriate error.
-4. If successful, then the donation is saved and full donation data is returned. 
+4. If successful, then the donation is saved and full donation data is returned.
 
 ### Specifying the Donation Amount to be Charged
 
@@ -47,15 +47,65 @@ The third case offers some interesting possibilities. Say for example you want a
 ### Preliminary Credit Card Processing Requirements/Approach
 
 - You **MUST** host your custom checkout page under SSL
-- You need to include our Checkout Javascript and pass your Giving Impact Public API Key (available in Account Settings in the Dashboard). 
+- You need to include our Checkout Javascript and pass your Giving Impact Public API Key (available in Account Settings in the Dashboard).
 - Form input name for your Credit Card Number, Expiration Date, and CVC number must be set to what is showcased in the example below.
 - Expiration data must be in the form of MM/YYYY
 
-This approach checks that credit card data is well formed, communicates when it is not, and creates a Stripe payment token when it is. This token is what is posted along with other required data to our API and helps to ensure that credit card data never hits your server, let alone ours. The token has all the necessary data encrypted within it for Stripe to read and process. 
+This approach checks that credit card data is well formed, communicates when it is not, and creates a Stripe payment token when it is. This token is what is posted along with other required data to our API and helps to ensure that credit card data never hits your server, let alone ours. The token has all the necessary data encrypted within it for Stripe to read and process.
 
 The code example below details the bullets above.
 
-<script src="https://gist.github.com/mindsondesignlab/463af1fb520814858fa5.js"></script>
+```html
+<!-- Your form here -->
+<form method="post" action="{your_target_url}">
+
+  <!-- Your donation related fields here -->
+
+  ...
+
+  <!-- Required Credit Card Fields -->
+
+  <label>Card Number:</label>
+  <input type="text" name="cc_number" />
+
+  <label>CVC:</label>
+  <input type="text" name="cc_cvc" />
+
+  <label>Expiration Date:</label>
+  <input type="text" name="cc_exp" />
+
+  <input type="submit" id="process-donation" value="Checkout" />
+
+</form>
+
+<!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<!-- Load script for credit card data preparation and processing -->
+<script type="text/javascript" src="http://api.givingimpact.com/v2/checkout?key={your_public_api_key}"></script>
+
+<script>
+  $(function() {
+
+    $('#process-donation').click(function(e) {
+      e.preventDefault();
+      $(this).text('Processing...');
+      $(this).attr('disabled', true);
+
+      GIAPI.checkout({
+        'card':     $('[name="cc_number"]').val(),
+        'cvc':      $('[name="cc_cvc"]').val(),
+        'month':    $('[name="cc_exp"]').val().substr(0,2),
+        'year':     $('[name="cc_exp"]').val().substr(5,4),
+      }, function(token) {
+        // the card token is returned, append to form and submit
+        $('#donate-form').append($('<input type="hidden" value="'+token+'" name="token" />'));
+        $('#donate-form').submit();
+      });
+    })
+  });
+</script>
+```
 
 ### Donation and Full Credit Card Processing
 
@@ -69,7 +119,24 @@ In addition to the authentication and user-agent headers, the following header i
 
 #### Example Post Body
 
-<script src="https://gist.github.com/mindsondesignlab/b4c223e2005931c5f960.js"></script>
+```json
+{
+  "campaign": "1234abcde",
+  "donation_date": "2013-05-16 20:00:00",
+  "first_name": "Greedo",
+  "last_name": "TheElder",
+  "billing_address1": "100 Best Spot",
+  "billing_city": "Mos Eisley Cantina",
+  "billing_state": "Tatooine",
+  "billing_postal_code": "10001",
+  "billing_country": "United States",
+  "donation_total": "50.00",
+  "donation_level": "",
+  "contact": true,
+  "email_address": "greedo@givingimpact.com",
+  "card": "1234somelongtokenfromstripetostripe"
+}
+```
 
 #### Arguments
 
@@ -101,7 +168,7 @@ With great flexibility comes the need for careful and purposeful implementation.
 - How many of Giving Impact's features to customize the donation experience you choose to support in your checkout page is up to you.
   - Want to support an open donation input form or donation levels that can be controlled via the Dashboard? That's up to you.
   - Want to support custom donation fields? Again, that's up to you.
-- One of the exciting possibilities of a Custom Checkout that cannot be done with the hosted solution is the ability to weave it into a flow of actions seamlessly. 
+- One of the exciting possibilities of a Custom Checkout that cannot be done with the hosted solution is the ability to weave it into a flow of actions seamlessly.
   - Say for example you want to collect a donation before allowing someone to create an e-card.
   - If you have a user capability on your website where folks are registered, you could pre-populate the contact/billing info of the form to streamline the checkout experience even further.
   - Want to have your donation levels be presented as images instead of simple text ... go for it. You can make that happen on your end and simply pass the required donation total amount to the form.
