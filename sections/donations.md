@@ -121,6 +121,11 @@ You can retrieve a list by sending a GET request to the URI with the following f
 
 	/opportunities/{id_token}/donations
 
+### Get a list of all of a Supporter's Donations
+
+You can retrieve a list by sending a GET request to the URI with the following format:
+
+	/supporters/{id_token}/donations
 
 ## Retrieve a Donation
 
