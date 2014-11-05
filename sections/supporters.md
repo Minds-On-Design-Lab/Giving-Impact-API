@@ -39,8 +39,8 @@ You can retrieve a list by sending a GET request to the URI with the following f
 
 ```json
 {
-  error: false,
-  supporters: [
+  "error": false,
+  "supporters": [
     {
       "id_token": "2fea64d8ac",
       "first_name": "Test",
