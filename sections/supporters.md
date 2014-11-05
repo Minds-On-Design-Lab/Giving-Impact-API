@@ -106,7 +106,6 @@ name | required | type/details
 ------- | ----- | ------------
 first_name | | string
 last_name | | string
-email_address | required | string
 city | | string
 state | | string
 postal_code | | string
