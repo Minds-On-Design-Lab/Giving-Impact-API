@@ -97,17 +97,17 @@ You can retrieve a list by sending a GET request to the URI with the following f
             }
         ],
         "supporter": {
-            id_token: "2fea64d8ac",
-            first_name: "Test",
-            last_name: "Donor",
-            email_address: "support@givingimpact.com",
-            street_address: "100 Brooklyn St",
-            city: "Brooklyn",
-            state: "NY",
-            postal_code: "11201",
-            country: "United States",
-            donations_total: "100",
-            total_donations: "2"
+            "id_token": "2fea64d8ac",
+            "first_name"": "Test",
+            "last_name": "Donor",
+            "email_address": "support@givingimpact.com",
+            "street_address": "100 Brooklyn St",
+            "city": "Brooklyn",
+            "state": "NY",
+            "postal_code": "11201",
+            "country": "United States",
+            "donations_total": "100",
+            "total_donations": "2"
         }
     }
 }
