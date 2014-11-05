@@ -98,7 +98,7 @@ You can retrieve a list by sending a GET request to the URI with the following f
         ],
         "supporter": {
             "id_token": "2fea64d8ac",
-            "first_name"": "Test",
+            "first_name": "Test",
             "last_name": "Donor",
             "email_address": "support@givingimpact.com",
             "street_address": "100 Brooklyn St",
