@@ -42,30 +42,30 @@ You can retrieve a list by sending a GET request to the URI with the following f
   error: false,
   supporters: [
     {
-      id_token: "2fea64d8ac",
-      first_name: "Test",
-      last_name: "Donor",
-      email_address: "testdonor@something.com",
-      street_address: "159 Somewhere St.",
-      city: "Brooklyn",
-      state: "NY",
-      postal_code: "11201",
-      country: "United States",
-      donations_total: "20",
-      total_donations: "1"
+      "id_token": "2fea64d8ac",
+      "first_name": "Test",
+      "last_name": "Donor",
+      "email_address": "testdonor@something.com",
+      "street_address": "159 Somewhere St.",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11201",
+      "country": "United States",
+      "donations_total": "20",
+      "total_donations": "1"
     },
     {
-      id_token: "fdc9741077",
-      first_name: "Jill",
-      last_name: "Friend",
-      email_address: "someone@bklyn.com",
-      street_address: "1 Atlantic Ave",
-      city: "Brooklyn",
-      state: "NY",
-      postal_code: "11201",
-      country: "US",
-      donations_total: "150",
-      total_donations: "2"
+      "id_token": "fdc9741077",
+      "first_name": "Jill",
+      "last_name": "Friend",
+      "email_address": "someone@bklyn.com",
+      "street_address": "1 Atlantic Ave",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11201",
+      "country": "US",
+      "donations_total": "150",
+      "total_donations": "2"
     }
   ]
 }
