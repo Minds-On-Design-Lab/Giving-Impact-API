@@ -3,6 +3,7 @@
 - [The Giving Opportunity Object](#the-giving-opportunity-object)
 - [List Giving Opportunities](#list-giving-opportunities)
 - [Retrieve a Giving Opportunity](#retrieve-a-giving-opportunity)
+- [Opportunities by Supporter](#opportunities-by-supporter)
 - [The Magic "Related" Parameter](#the-magic-related-parameter)
 - [Create a Giving Opportunity](#create-a-giving-opportunity)
 - [Update a Giving Opportunity](#update-a-giving-opportunity)
@@ -57,39 +58,39 @@ Get a list of all of a Campaign's Giving Opportunties with the following GET req
 
 ```json
 {
-  "error": false,
-  "opportunity": {
-    "id_token": "0a13b0fbdb",
-    "status": true,
-    "title": "Team MOD-Lab",
-    "description": "We are team dedicated to this Sample Org and their cause. Here is why we think you should support us and them. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "donation_url": "http://app.givingimpact.com/initiate_donation/0a13b0fbdb",
-    "donation_target": "300.00",
-    "donation_total": "195.00",
-    "total_donations": "2",
-    "share_url": "http://app.givingimpact.com/initiate_share/0a13b0fbdb",
-    "shares_fb": "0",
-    "shares_twitter": "1",
-    "image_url": "",
-    "thumb_url": "",
-    "youtube_id": "",
-    "campaign_responses": [
-      {
-        "campaign_field_id": "1",
-        "field_type": "text",
-        "field_label": "What is your Name?",
-        "response": "Thor",
-        "status": true
-      },
-      {
-        "campaign_field_id": "2",
-        "field_type": "How did you hear about this campaign?",
-        "field_label": "A dropdown",
-        "response": "Email",
-        "status": true
-      }
-    ]
-  }
+	"error": false,
+	"opportunity": {
+		"id_token": "0a13b0fbdb",
+		"status": true,
+		"title": "Team MOD-Lab",
+		"description": "We are team dedicated to this Sample Org and their cause. Here is why we think you should support us and them. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"donation_url": "http://app.givingimpact.com/initiate_donation/0a13b0fbdb",
+		"donation_target": "300.00",
+		"donation_total": "195.00",
+		"total_donations": "2",
+		"share_url": "http://app.givingimpact.com/initiate_share/0a13b0fbdb",
+		"shares_fb": "0",
+		"shares_twitter": "1",
+		"image_url": "",
+		"thumb_url": "",
+		"youtube_id": "",
+		"campaign_responses": [
+			{
+				"campaign_field_id": "1",
+				"field_type": "text",
+				"field_label": "What is your Name?",
+				"response": "Thor",
+				"status": true
+			},
+			{
+				"campaign_field_id": "2",
+				"field_type": "How did you hear about this campaign?",
+				"field_label": "A dropdown",
+				"response": "Email",
+				"status": true
+			}
+		]
+	}
 }
 ```
 
@@ -98,6 +99,12 @@ Get a list of all of a Campaign's Giving Opportunties with the following GET req
 You can retrieve a single result by sending a GET request to the URI with the following format:
 
 	/opportunities/{id_token}
+
+## Opportunities by Supporter
+
+You can retrieve a list of opportunities for a supporter by passing the `supporter` parameter:
+
+	/opportunities?supporter=name@example.com
 
 ## The Magic "Related" Parameter
 
@@ -109,21 +116,21 @@ There are times when the Giving Opportunity object data is not enough and you si
 
 You can create a new Giving Opportunity by sending a POST request to the following URI.
 
-    /opportunities
+		/opportunities
 
 In addition to the authentication and user-agent headers, the following header is also required for POST requests:
 
-    Content-Type: application/json
+		Content-Type: application/json
 
 ### Example Post Body
 
 ```json
 {
-  "campaign_token":"{id_token}",
-  "title":"String name goes here",
-  "description":"Full description goes here. This can be a short paragraph.",
-  "donation_target":"500.00",
-  "status":true
+	"campaign_token":"{id_token}",
+	"title":"String name goes here",
+	"description":"Full description goes here. This can be a short paragraph.",
+	"donation_target":"500.00",
+	"status":true
 }
 ```
 
@@ -155,8 +162,8 @@ response | | string, data storing for field response
 
 You can update an existing Giving Opportunity by sending a POST request to the following URI where {id_token} is the unique id for the Giving Opportunity you would like to edit.
 
-     /opportunities/{id_token}
+		 /opportunities/{id_token}
 
 In addition to the authentication and user-agent headers, the following header is also required for POST requests:
 
-     Content-Type: application/json
+		 Content-Type: application/json
