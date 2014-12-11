@@ -48,6 +48,23 @@ field_label | string | label displayed to the Giving Opportunity creator to desc
 response | string | user entered or selected response
 status | boolean | true/false, defaults to true, used to control preference for whether field is active or inactive
 
+#### Hash: supporters
+
+Opportunity supporters
+
+name | type | description
+------- | ----- | ------------
+id_token | string | unique identifier for the supporter
+first_name | string | first name
+last_name | string | last name
+email_address | string | email address
+street_address | string | street address
+city | string | city
+state | string | state
+postal_code | string | postal code
+country | string | country
+donations_total | int | total donation amount by supporter
+
 ## List Giving Opportunities
 
 Get a list of all of a Campaign's Giving Opportunties with the following GET request:
@@ -88,6 +105,34 @@ Get a list of all of a Campaign's Giving Opportunties with the following GET req
 				"field_label": "A dropdown",
 				"response": "Email",
 				"status": true
+			}
+		],
+		"supporters": [
+			{
+				  "id_token": "2fea64d8ac",
+				  "first_name": "Test",
+				  "last_name": "Donor",
+				  "email_address": "testdonor@something.com",
+				  "street_address": "159 Somewhere St.",
+				  "city": "Brooklyn",
+				  "state": "NY",
+				  "postal_code": "11201",
+				  "country": "United States",
+				  "donations_total": "20",
+				  "total_donations": "1"
+			},
+			{
+				  "id_token": "fdc9741077",
+				  "first_name": "Jill",
+				  "last_name": "Friend",
+				  "email_address": "someone@bklyn.com",
+				  "street_address": "1 Atlantic Ave",
+				  "city": "Brooklyn",
+				  "state": "NY",
+				  "postal_code": "11201",
+				  "country": "US",
+				  "donations_total": "150",
+				  "total_donations": "2"
 			}
 		]
 	}
