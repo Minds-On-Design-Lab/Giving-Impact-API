@@ -3,6 +3,7 @@
 - [The Donation Object](#the-donation-object)
 - [List Donations](#list-donations)
 - [Retrieve a Donation](#retrieve-a-donation)
+- [Donations by Supporter](#donations-by-supporter)
 - [The Magic Related Parameter](#the-magic-related-parameter)
 - [Create an Offline Donation](#create-an-offline-donation)
 - [Update an Existing Donation](#update-an-existing-donation)
@@ -60,56 +61,56 @@ You can retrieve a list by sending a GET request to the URI with the following f
 
 ```json
 {
-    "error": false,
-    "donation": {
-        "id_token": "a5f105f445",
-        "donation_date": "2013-03-01 10:37:52",
-        "campaign": "c5bb65d34b",
-        "first_name": "Test",
-        "last_name": "Donor",
-        "billing_address1": "100 Brooklyn St",
-        "billing_city": "Brooklyn",
-        "billing_state": "New York",
-        "billing_postal_code": "11201",
-        "billing_country": "United States",
-        "donation_total": "50.00",
-        "donation_level": "",
-        "donation_level_id": "",
-        "contact": true,
-        "email_address": "support@givingimpact.com",
-        "offline": false,
-        "twitter_share": false,
-        "fb_share": false,
-        "custom_responses": [
-            {
-                "field_id": "123",
-                "field_type": "text",
-                "field_label": "Donation Message",
-                "response": "I think this is a stellar cause, wish I could join the walk with a team.",
-                "status": true
-            },
-            {
-                "field_id": "124",
-                "field_type": "dropdown",
-                "field_label": "How did you hear about this cause?",
-                "response": "Facebook",
-                "status": true
-            }
-        ],
-        "supporter": {
-            id_token: "2fea64d8ac",
-            first_name: "Test",
-            last_name: "Donor",
-            email_address: "support@givingimpact.com",
-            street_address: "100 Brooklyn St",
-            city: "Brooklyn",
-            state: "NY",
-            postal_code: "11201",
-            country: "United States",
-            donations_total: "100",
-            total_donations: "2"
-        }
-    }
+		"error": false,
+		"donation": {
+				"id_token": "a5f105f445",
+				"donation_date": "2013-03-01 10:37:52",
+				"campaign": "c5bb65d34b",
+				"first_name": "Test",
+				"last_name": "Donor",
+				"billing_address1": "100 Brooklyn St",
+				"billing_city": "Brooklyn",
+				"billing_state": "New York",
+				"billing_postal_code": "11201",
+				"billing_country": "United States",
+				"donation_total": "50.00",
+				"donation_level": "",
+				"donation_level_id": "",
+				"contact": true,
+				"email_address": "support@givingimpact.com",
+				"offline": false,
+				"twitter_share": false,
+				"fb_share": false,
+				"custom_responses": [
+						{
+								"field_id": "123",
+								"field_type": "text",
+								"field_label": "Donation Message",
+								"response": "I think this is a stellar cause, wish I could join the walk with a team.",
+								"status": true
+						},
+						{
+								"field_id": "124",
+								"field_type": "dropdown",
+								"field_label": "How did you hear about this cause?",
+								"response": "Facebook",
+								"status": true
+						}
+				],
+				"supporter": {
+						"id_token": "2fea64d8ac",
+						"first_name": "Test",
+						"last_name": "Donor",
+						"email_address": "support@givingimpact.com",
+						"street_address": "100 Brooklyn St",
+						"city": "Brooklyn",
+						"state": "NY",
+						"postal_code": "11201",
+						"country": "United States",
+						"donations_total": "100",
+						"total_donations": "2"
+				}
+		}
 }
 ```
 
@@ -133,6 +134,11 @@ You can retrieve a single donation by sending a GET request to the URI with the 
 
 	/donations/{id_token}
 
+## Donations by Supporter
+
+You can retrieve a list of donations for a supporter by passing the `supporter` parameter:
+
+	/donations?supporter=name@example.com
 
 ## The Magic "Related" Parameter
 
@@ -147,29 +153,29 @@ Donations recorded through the checkout are documented as part of that process; 
 
 You can create a new "offline" donation by sending a POST request to the following URI.
 
-    /donations
+		/donations
 
 In addition to the authentication and user-agent headers, the following header is also required for POST requests:
 
-    Content-Type: application/json
+		Content-Type: application/json
 
 ### Example Post Body
 
 ```json
 {
-  "campaign": "1234abcde",
-  "donation_date": "2013-05-16 20:00:00",
-  "first_name": "Greedo",
-  "last_name": "TheElder",
-  "billing_address1": "100 Best Spot",
-  "billing_city": "Mos Eisley Cantina",
-  "billing_state": "Tatooine",
-  "billing_postal_code": "10001",
-  "billing_country": "United States",
-  "donation_total": "50.00",
-  "donation_level": "",
-  "contact": true,
-  "email_address": "greedo@givingimpact.com"
+	"campaign": "1234abcde",
+	"donation_date": "2013-05-16 20:00:00",
+	"first_name": "Greedo",
+	"last_name": "TheElder",
+	"billing_address1": "100 Best Spot",
+	"billing_city": "Mos Eisley Cantina",
+	"billing_state": "Tatooine",
+	"billing_postal_code": "10001",
+	"billing_country": "United States",
+	"donation_total": "50.00",
+	"donation_level": "",
+	"contact": true,
+	"email_address": "greedo@givingimpact.com"
 }
 ```
 
@@ -207,11 +213,11 @@ response | | string, donors response
 
 You can update an existing "Offline" or online donation by sending a POST request to the following URI where {id_token} is the unique id for the donation you would like to edit.
 
-     /donations/{id_token}
+		 /donations/{id_token}
 
 In addition to the authentication and user-agent headers, the following header is also required for POST requests:
 
-     Content-Type: application/json
+		 Content-Type: application/json
 
 ### Implementation Details
 
