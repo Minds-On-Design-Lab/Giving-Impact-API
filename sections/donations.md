@@ -26,7 +26,7 @@ billing_city | string | billing city
 billing_state | string | state
 billing_postal_code | string | billing postal code
 billing_country | string | billing country
-donation_total | int | donation amount
+donation_total | int | donation amount, in cents
 donation_level | string | if a donation level was selected, would include the level label
 donation_level_id | int | unique identifier for level selected
 contact | boolean | true/false, used to define if donor opted out of being contacted by email
@@ -73,7 +73,7 @@ You can retrieve a list by sending a GET request to the URI with the following f
 				"billing_state": "New York",
 				"billing_postal_code": "11201",
 				"billing_country": "United States",
-				"donation_total": "50.00",
+				"donation_total": "5000",
 				"donation_level": "",
 				"donation_level_id": "",
 				"contact": true,
@@ -107,7 +107,7 @@ You can retrieve a list by sending a GET request to the URI with the following f
 						"state": "NY",
 						"postal_code": "11201",
 						"country": "United States",
-						"donations_total": "100",
+						"donations_total": "10000",
 						"total_donations": "2"
 				}
 		}
@@ -172,7 +172,7 @@ In addition to the authentication and user-agent headers, the following header i
 	"billing_state": "Tatooine",
 	"billing_postal_code": "10001",
 	"billing_country": "United States",
-	"donation_total": "50.00",
+	"donation_total": "5000",
 	"donation_level": "",
 	"contact": true,
 	"email_address": "greedo@givingimpact.com"
@@ -194,7 +194,7 @@ billing_city | required | string, billing city
 billing_state | required | string, state
 billing_postal_code | required | string, billing postal code
 billing_country | required | string, billing country
-donation_total | required| int, donation amount
+donation_total | required| int, donation amount, in cents
 donation_level_id | | int, unique identifier for level selected
 contact | required | boolean*, true/false, used to define if donor opted out of being contacted by email
 email_address | required | string, email address of donor

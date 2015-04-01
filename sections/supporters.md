@@ -23,7 +23,7 @@ city | string | city
 state | string | state
 postal_code | string | postal code
 country | string | country
-donations_total | int | total donation amount by supporter
+donations_total | int | total donation amount by supporter, in cents
 
 ## List Supporters
 
@@ -51,7 +51,7 @@ You can retrieve a list by sending a GET request to the URI with the following f
       "state": "NY",
       "postal_code": "11201",
       "country": "United States",
-      "donations_total": "20",
+      "donations_total": "2000",
       "total_donations": "1"
     },
     {
@@ -64,7 +64,7 @@ You can retrieve a list by sending a GET request to the URI with the following f
       "state": "NY",
       "postal_code": "11201",
       "country": "US",
-      "donations_total": "150",
+      "donations_total": "15000",
       "total_donations": "2"
     }
   ]

@@ -1,6 +1,6 @@
 # Campaigns
 
-Campaigns can represent any number of fundraising efforts from walks, to bowl-a-thons, to simple open-ended online giving. Depending on the type of fundraising effort you are running there are various campaign settings you may choose to set up including donation levels, custom data collection fields, and one of the most important, whether the campaign can have Giving Opportunities.  
+Campaigns can represent any number of fundraising efforts from walks, to bowl-a-thons, to simple open-ended online giving. Depending on the type of fundraising effort you are running there are various campaign settings you may choose to set up including donation levels, custom data collection fields, and one of the most important, whether the campaign can have Giving Opportunities.
 
 Giving Opportunities are used to setup teams within a Campaign and as such are perfect to use for events such as walks, bowl-a-thons, or other peer to peer initiatives. They represent unique fundraising opportunities within a parent campaign. Each Giving Opportunity can track donations, shares, and other data uniquely as well as all of these data aggregate up to the parent campaign. This allows you to track the support given to the Campaign as a whole along with that for each individual Giving Opportunity within the Campaign.
 
@@ -25,11 +25,12 @@ status | boolean | true/false, used to define if Campaign is active or not
 title | string | Campaign name
 description | text | description maintains "\n" and "\r\n" and allows the following tags: `<p>, <a>, <strong>, <em>, <b>, <i>, <br>, <ol>, <ul>, <li>`
 donation_url | string | fully qualified URL to the hosted donation checkout
-| donation_target | decimal | campaign fundraising goal
-| donation_minimum | decimal | default is 5.00, minimum donation accepted
-| donation_total | decimal | current total
-| total_donations | int | current count of donations made
-| enable_donation_levels | boolean | true/false, default is false, used to define whether donation levels should be employed or not
+donation_target | int | campaign fundraising goal, in cents
+donation_minimum | int | default is 500, minimum donation accepted, in cents
+donation_total | int | current total, in cents
+total_donations | int | current count of donations made
+currency | string | Account currency code (e.g. 'usd')
+enable_donation_levels | boolean | true/false, default is false, used to define whether donation levels should be employed or not
 has_giving_opportunities | boolean | true/false, defaults to false, used to enable the use of Giving Opportunities within the Campaign
 total_opportunities | int | count of Giving Opportunities associated with the Campaign
 share_url | string | fully qualified URL to the hosted share page
@@ -52,7 +53,7 @@ Includes each donation level
 name | type | description
 ------- | ----- | ------------
 level_id | int | unique identifier for level
-amount | decimal | value of level
+amount | int | value of level
 label | string | label/description of level
 position | int | used to define the order of levels for display
 
@@ -135,9 +136,10 @@ Get a list of all of an account's campaigns including both active and inactive w
 			"title": "Walk Campaign",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 			"donation_url": "https://app.givingimpact.com/initiate_donation/123abcdefg",
-			"donation_target": "500.00",
-			"donation_minimum": "10.00",
-			"donation_total": "200.00",
+			"donation_target": "50000",
+			"donation_minimum": "1000",
+			"donation_total": "20000",
+			"currency": "usd",
 			"total_donations": "4",
 			"enable_donation_levels": false,
 			"donation_levels": [],
@@ -186,24 +188,24 @@ Get a list of all of an account's campaigns including both active and inactive w
 			"title": "Holiday Fundraiser",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 			"donation_url": "https://app.givingimpact.com/initiate_donation/456abcdefg",
-			"donation_target": "10000.00",
-			"donation_minimum": "25.00",
-			"donation_total": "3500.00",
+			"donation_target": "1000000",
+			"donation_minimum": "2500",
+			"donation_total": "350000",
 			"total_donations": "40",
 			"enable_donation_levels": true,
 			"donation_levels": [
 				{
-					"amount": "25.00",
+					"amount": "2500",
 					"label": "Silver",
 					"position": "1"
 				},
 				{
-					"amount": "100.00",
+					"amount": "10000",
 					"label": "Gold",
 					"position": "2"
 				},
 				{
-					"amount": "500.00",
+					"amount": "50000",
 					"label": "Platinum",
 					"position": "3"
 				}
@@ -278,8 +280,8 @@ In addition to the authentication and user-agent headers, the following header i
   "status": true,
   "title": "The Ultimate Bowl-a-thon!!!",
   "description": "Create your team. Gather your uniforms. Knock some pins. Support us to do more good.",
-  "donation_target": "5000.00",
-  "donation_minimum": "10.00",
+  "donation_target": "500000",
+  "donation_minimum": "1000",
   "enable_donation_levels": false,
   "has_giving_opportunities": true
 }

@@ -8,7 +8,7 @@
 - [Create a Giving Opportunity](#create-a-giving-opportunity)
 - [Update a Giving Opportunity](#update-a-giving-opportunity)
 
-Giving Opportunities are the buckets within the bucket of a Campaign. Want to setup a team-based Campaign or allow supporters to create their own peer-to-peer fundraising pages for their birthday's? You can use Giving Opportunities to track and manage the activies of these smaller yet crucial efforts and have their results aggregate up to a parent Campaign.
+Giving Opportunities are the buckets within the bucket of a Campaign. Want to setup a team-based Campaign or allow supporters to create their own peer-to-peer fundraising pages for their birthdays? You can use Giving Opportunities to track and manage the activies of these smaller yet crucial efforts and have their results aggregate up to a parent Campaign.
 
 Because a Giving Opportunity has a parent Campaign, it is by design that many features and preferences of the campaign should trickle down to the Giving Opportunity including use of donation levels, custom fields, minimum donation amount, and such. To help access these data we include a [related parameter](#the-magic-related-parameter) that lets you retrieve the full set of campaign data along with that of the opportunity.
 
@@ -26,8 +26,8 @@ status | boolean | true/false, used to define if Giving Opportunity is active or
 title | string | Giving Opportunity name
 description | text | description maintains "\n" and "\r\n" and allows the following tags: `<p>, <a>, <strong>, <em>, <b>, <i>, <br>, <ol>, <ul>, <li>`
 donation_url | string | fully qualified URL to the hosted donation checkout
-donation_target | decimal | Giving Opportunity fundraising goal
-donation_total | decimal | current total
+donation_target | int | Giving Opportunity fundraising goal, in cents
+donation_total | int | current total, in cents
 total_donations | int | current count of donations made
 share_url | string | fully qualified URL to the hosted share page
 shares_fb | int | count of instances of Facebook shares made through hosted share functionality
@@ -82,8 +82,8 @@ Get a list of all of a Campaign's Giving Opportunties with the following GET req
 		"title": "Team MOD-Lab",
 		"description": "We are team dedicated to this Sample Org and their cause. Here is why we think you should support us and them. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		"donation_url": "http://app.givingimpact.com/initiate_donation/0a13b0fbdb",
-		"donation_target": "300.00",
-		"donation_total": "195.00",
+		"donation_target": "30000",
+		"donation_total": "19500",
 		"total_donations": "2",
 		"share_url": "http://app.givingimpact.com/initiate_share/0a13b0fbdb",
 		"shares_fb": "0",
@@ -118,7 +118,7 @@ Get a list of all of a Campaign's Giving Opportunties with the following GET req
 				  "state": "NY",
 				  "postal_code": "11201",
 				  "country": "United States",
-				  "donations_total": "20",
+				  "donations_total": "2000",
 				  "total_donations": "1"
 			},
 			{
@@ -131,7 +131,7 @@ Get a list of all of a Campaign's Giving Opportunties with the following GET req
 				  "state": "NY",
 				  "postal_code": "11201",
 				  "country": "US",
-				  "donations_total": "150",
+				  "donations_total": "15000",
 				  "total_donations": "2"
 			}
 		]
@@ -174,7 +174,7 @@ In addition to the authentication and user-agent headers, the following header i
 	"campaign_token":"{id_token}",
 	"title":"String name goes here",
 	"description":"Full description goes here. This can be a short paragraph.",
-	"donation_target":"500.00",
+	"donation_target":"50000",
 	"status":true
 }
 ```
@@ -189,7 +189,7 @@ campaign_token | required | string, unique id_token for the parent Campaign
 status | required | boolean, true/false
 title | required | string
 description | required | text, description maintains "\n" and "\r\n" and allows the following tags: `<p>, <a>, <strong>, <em>, <b>, <i>, <br>, <ol>, <ul>, <li>`
-donation_target | | decimal
+donation_target | | int
 image_file | | base64 blob
 image_type | | enum, currently accepts “jpg”, “gif”, or “png”, default is “jpg” if image exists, describes the type image_file being sent
 youtube_id | | string, can accept just the id or YouTube short URL from which we will extract the id e.g.,  http://youtu.be/C_S5cXbXe–4
