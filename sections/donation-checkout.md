@@ -38,7 +38,7 @@ In short, this setup ensures that credit card data does not touch your server (l
 
 To determine the amount of the donation to be processed, you must either pass a `donation_total` or a `donation_level_id`. The following details various post cases and how they are handled.
 
-1. **donation_total ONLY** - If you post a `donation_total` only, this is the the value that will be charged.
+1. **donation_total ONLY** - If you post a `donation_total` only, this is the the value that will be charged, in cents.
 2. **donation_level_id ONLY** - If you post a `donation_level_id` only, first we will check that the ID matches a level for the campaign you are posting to and if so it will charge the value that is associated with that level.
 3. **donation_total AND donation_level_id** - If you post both a `donation_total` and a `donation_level_id` then the `donation_total` will be the value charged; however, we will also store the level information along with the donation record.
 
@@ -130,7 +130,7 @@ In addition to the authentication and user-agent headers, the following header i
   "billing_state": "Tatooine",
   "billing_postal_code": "10001",
   "billing_country": "United States",
-  "donation_total": "50.00",
+  "donation_total": "5000",
   "donation_level": "",
   "contact": true,
   "email_address": "greedo@givingimpact.com",
@@ -153,7 +153,7 @@ billing_city | required | string, billing city
 billing_state | required | string, state
 billing_postal_code | required | string, billing postal code
 billing_country | required | string, billing country
-donation_total | conditionally required | int, donation amount
+donation_total | conditionally required | int, donation amount, in cents
 donation_level_id | conditionally required | int, this represents the unique id of the donation level
 donation_level | | string, this represents the label of a donation level DEPRACATED - This field is no longer needed. Level label will be determined by the donation_level_id provided. If these data are posted, it will simply be ignored.
 contact | required | boolean, true/false, default false, used to define if donor opted out of being contacted by email
