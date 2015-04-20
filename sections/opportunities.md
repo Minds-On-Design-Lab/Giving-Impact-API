@@ -175,7 +175,20 @@ In addition to the authentication and user-agent headers, the following header i
 	"title":"String name goes here",
 	"description":"Full description goes here. This can be a short paragraph.",
 	"donation_target":"50000",
-	"status":true
+	"status":true,
+	"supporters": [
+		{
+			"email_address": "email@example.com",
+			"first_name": "First",
+			"last_name": "Last",
+			"street_address": "123 Faux",
+			"city": "Fauxton",
+			"state": "FX",
+			"postal_code": "55555",
+			"country": "US"
+		},
+		...
+	]
 }
 ```
 
@@ -193,6 +206,22 @@ donation_target | | int
 image_file | | base64 blob
 image_type | | enum, currently accepts “jpg”, “gif”, or “png”, default is “jpg” if image exists, describes the type image_file being sent
 youtube_id | | string, can accept just the id or YouTube short URL from which we will extract the id e.g.,  http://youtu.be/C_S5cXbXe–4
+supporters | | array of supporter values, see below
+
+#### Arguments: Supporters
+
+You can attach a supporter to an opportunity by passing supporter along with the opportunity object. Supporters are identified by their email address, so existing emails will be updated, new email addresses will be created.
+
+name | required | type/details
+---- | -------- | ------------
+email_address | required | string
+first_name | | string
+last_name | | string
+street_address | | string
+city | | string
+state | | string
+postal_code | | string
+country | | string
 
 #### Hash: custom_response
 
