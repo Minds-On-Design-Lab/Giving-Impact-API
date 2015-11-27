@@ -8,7 +8,7 @@ We've designed our API for a **refreshingly simple and customizable** experience
 
 ## API Endpoint
 
-	https://app.givingimpact.com/api/{version}
+	https://[YOUR-GI-INSTANCE-URL-HERE]/api/{version}
 
 ## Resource URL Patterns
 
