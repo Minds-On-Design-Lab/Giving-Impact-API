@@ -29,9 +29,6 @@ donation_url | string | fully qualified URL to the hosted donation checkout
 donation_target | int | Giving Opportunity fundraising goal, in cents
 donation_total | int | current total, in cents
 total_donations | int | current count of donations made
-share_url | string | fully qualified URL to the hosted share page
-shares_fb | int | count of instances of Facebook shares made through hosted share functionality
-shares_twitter | int | count of instances of Twitter tweets made through hosted share functionality
 image_url | string | fully qualified URL to the hosted Giving Opportunity image - original file
 thumb_url | string | fully qualified URL to the hosted Giving Opportunity image - thumbnail file
 youtube_id | string | YouTube ID for video to display with Giving Opportunity
@@ -67,7 +64,7 @@ donations_total | int | total donation amount by supporter
 
 ## List Giving Opportunities
 
-Get a list of all of a Campaign's Giving Opportunties with the following GET request:
+Get a list of all of a Campaign's Giving Opportunities with the following GET request:
 
 	/campaigns/{id_token}/opportunities
 
@@ -85,9 +82,6 @@ Get a list of all of a Campaign's Giving Opportunties with the following GET req
 		"donation_target": "30000",
 		"donation_total": "19500",
 		"total_donations": "2",
-		"share_url": "http://app.givingimpact.com/initiate_share/0a13b0fbdb",
-		"shares_fb": "0",
-		"shares_twitter": "1",
 		"image_url": "",
 		"thumb_url": "",
 		"youtube_id": "",
@@ -153,7 +147,7 @@ You can retrieve a list of opportunities for a supporter by passing the `support
 
 ## The Magic "Related" Parameter
 
-There are times when the Giving Opportunity object data is not enough and you simply need the parent Campaign's data as well. Let's say you want the hastag to add to a Tweet button or you simply want the Campaign id_token and title so you can create a breadcrumb link back to the Campaign page. Whatever your need or reason, all you need to do is pass the following parameter to either your list or specific Giving Opportunity calls to get the relate parent Campaign data as well.
+There are times when the Giving Opportunity object data is not enough and you simply need the parent Campaign's data as well. All you need to do is pass the following parameter to either your list or specific Giving Opportunity calls to get the relate parent Campaign data as well.
 
 	related: true
 

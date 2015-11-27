@@ -33,13 +33,9 @@ currency | string | Account currency code (e.g. 'usd')
 enable_donation_levels | boolean | true/false, default is false, used to define whether donation levels should be employed or not
 has_giving_opportunities | boolean | true/false, defaults to false, used to enable the use of Giving Opportunities within the Campaign
 total_opportunities | int | count of Giving Opportunities associated with the Campaign
-share_url | string | fully qualified URL to the hosted share page
-shares_fb | int | count of instances of Facebook shares made through hosted share functionality
-shares_twitter | int | count of instances of Twitter tweets made through hosted share functionality
-image_url | string | fully qualified URL to the hosted Campaign image - original file. Userd in hosted checkout.
+image_url | string | fully qualified URL to the hosted Campaign image - original file. Used in hosted checkout.
 thumb_url | string | fully qualified URL to the hosted Campaign image - thumbnail file. Used in hosted checkout.
 youtube_id | string | YouTube ID for video to display with Campaign. Used in hosted checkout.
-hash_tag | string | Twitter hash tag, should include the # e.g., #givingimpact. Used in hosted share.
 analytics_id | string | Google analytics profile id associated with the Campaign which when present enables ecommerce tracking on hosted donation checkout and share pages e.g., UA-1234567-12
 campaign_color | string | HEX color code used on hosted checkout/share and receipt emails for accent and header background colors
 header_font_color | string | HEX color code used for header font on hosted checkout/share and receipt emails.
@@ -145,13 +141,9 @@ Get a list of all of an account's campaigns including both active and inactive w
 			"donation_levels": [],
 			"has_giving_opportunities": true,
 			"total_opportunities": "3",
-			"share_url": "https://app.givingimpact.com/initiate_share/123abcdefg",
-			"shares_fb": "5",
-			"shares_twitter": "10",
 			"image_url": "http://ourcdn.com/campaign_images/112/_original.jpg",
 			"thumb_url": "http://ourcdn.com/campaign_images/112/_thumb.jpg",
 			"youtube_id": "abCdEf1234",
-			"hash_tag": "#walkcampaign",
 			"analytics_id": "UA-1234567-11",
 			"campaign_color": "#000000",
 			"header_font_color": "#ffffff",
@@ -212,9 +204,6 @@ Get a list of all of an account's campaigns including both active and inactive w
 			],
 			"has_giving_opportunities": false,
 			"total_opportunities": "0",
-			"share_url": "https://app.givingimpact.com/initiate_share/456abcdefg",
-			"shares_fb": "5",
-			"shares_twitter": "10",
 			"image_url": "http://ourcdn.com/campaign_images/112/_original.jpg",
 			"thumb_url": "http://ourcdn.com/campaign_images/112/_thumb.jpg",
 			"youtube_id": "abCdEf1234",

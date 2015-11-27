@@ -82,7 +82,7 @@ The code example below details the bullets above.
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 <!-- Load script for credit card data preparation and processing -->
-<script type="text/javascript" src="http://api.givingimpact.com/v2/checkout?key={your_public_api_key}"></script>
+<script type="text/javascript" src="http://[YOUR-GI-INSTANCE-URL-HERE]/v2/checkout?key={your_public_api_key}"></script>
 
 <script>
   $(function() {

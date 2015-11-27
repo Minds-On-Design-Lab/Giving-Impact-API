@@ -298,7 +298,7 @@ To delete a hook send a DELETE request to the URI with the following format:
 
 ## Hook Failures
 
-Imagine your URL endpoint becomes unavailible for a time, what happens when events fire and we can't connect to make a successful call?
+Imagine your URL endpoint becomes unavailable for a time, what happens when events fire and we can't connect to make a successful call?
 
 In the event of a failed hook request, our service will:
 

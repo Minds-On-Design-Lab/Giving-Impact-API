@@ -15,8 +15,6 @@ The following details each attribute uniquely associated with the Stats object.
 name | type | description
 ------- | ----- | ------------
 total_donations | int | total number of donations
-shares_fb | int | total number of facebook shares
-shares_twitter | int | total number of twitter shares
 donation_total | int | sum total of donation amount
 date | date | YYYY-MM-DD
 
@@ -35,15 +33,11 @@ date | date | YYYY-MM-DD
   "stats": [
     {
       "total_donations": "1",
-      "shares_fb": 0,
-      "shares_twitter": 0,
       "donation_total": "3400",
       "date": "2013-05-16"
     },
     {
       "total_donations": "2",
-      "shares_fb": 0,
-      "shares_twitter": 0,
       "donation_total": "2900",
       "date": "2013-05-13"
     }

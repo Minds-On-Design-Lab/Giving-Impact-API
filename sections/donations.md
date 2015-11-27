@@ -32,8 +32,6 @@ donation_level_id | int | unique identifier for level selected
 contact | boolean | true/false, used to define if donor opted out of being contacted by email
 email_address | string | email address of donor
 offline | boolean | true/false, used to define if donation was recorded as an "offline" donation or not
-twitter_share | boolean | true/false, used to define if donor shared via Twitter at end of donation checkout
-facebook_share | boolean | true/false, used to define if donor shared via Facebook at end of donation checkout
 
 #### Hash: custom_responses
 
@@ -79,8 +77,6 @@ You can retrieve a list by sending a GET request to the URI with the following f
 				"contact": true,
 				"email_address": "support@givingimpact.com",
 				"offline": false,
-				"twitter_share": false,
-				"fb_share": false,
 				"custom_responses": [
 						{
 								"field_id": "123",
@@ -114,7 +110,7 @@ You can retrieve a list by sending a GET request to the URI with the following f
 }
 ```
 
-### Get a list of all of a Giving Opportunty's Donations
+### Get a list of all of a Giving Opportunity's Donations
 
 Please note, if a donor opts out for email follow-ups, their email address will not be returned.
 

@@ -116,7 +116,7 @@ email_address | required | string, email address of donor
 
 ## Update an Existing Supporter
 
-You can update an existing supporer by sending a POST request to the following URI where {id_token} is the unique id for the supporter you would like to edit.
+You can update an existing supporter by sending a POST request to the following URI where {id_token} is the unique id for the supporter you would like to edit.
 
      /supporter/{id_token}
 

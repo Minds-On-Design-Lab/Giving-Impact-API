@@ -8,15 +8,15 @@ All API methods support parameters to *sort*, *limit*, and *offset* results. The
 
 These parameters are appended to the query string in traditional GET request format:
 
-	<REQUEST>?limit=<INT>&offset=<INT>&order=<PROPERTY>[|<DIRECTION>] 
+	<REQUEST>?limit=<INT>&offset=<INT>&order=<PROPERTY>[|<DIRECTION>]
 
 If offset is omitted, **0** is assumed. Direction is optional and defaults to **ASC** (ascending).
 
 ### Examples ###
 
 Return 10 Campaigns:
-	
-	/campaigns?limit=10 
+
+	/campaigns?limit=10
 
 Return 8 Campaigns, skipping the first 20:
 
@@ -24,7 +24,7 @@ Return 8 Campaigns, skipping the first 20:
 
 Return 10 Campaigns, ordered by donation_total:
 
-	/campaigns?limit=10&sort=donation_total 
+	/campaigns?limit=10&sort=donation_total
 
 Return 10 Campaigns, ordered by most funded first:
 
@@ -32,10 +32,10 @@ Return 10 Campaigns, ordered by most funded first:
 
 *Note the pipe ("|") character between donation_total and desc. The sort value can be any valid attribute.*
 
-Return 3 Giving Opportunties, ordered by the most donations received:
+Return 3 Giving Opportunities, ordered by the most donations received:
 
 	/campaigns/{id_token}/opportunities?limit=3&sort=total_donations|desc
-	
+
 Return 10 most recent Campaign donors:
 
 	/campaigns/{id_token}/donations?limit=10&sort=donation_date|desc
